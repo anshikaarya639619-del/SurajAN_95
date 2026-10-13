@@ -122,7 +122,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
  .sa-signature .sa-char{animation:none!important}
 }
 </style>
-  <link rel="stylesheet" href="stark-ui.css?v=20261013-reactor4">
+  <link rel="stylesheet" href="stark-ui.css?v=20261013-silent5">
 </head>
 <body>
   <main>
@@ -135,41 +135,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 
 <a class="sa-signature" href="/SurajAN_95/" aria-label="SurajAN_95 — website signature watermark"><span class="sa-dot" aria-hidden="true"></span><span class="sa-name" aria-label="SurajAN_95"><span class="sa-char" style="--sa-top:#ffffff;--sa-bottom:#a9c7ff;--sa-glow:#9fc6ff;--sa-delay:0.00s" aria-hidden="true">S</span><span class="sa-char" style="--sa-top:#8cecff;--sa-bottom:#237eff;--sa-glow:#57cfff;--sa-delay:0.16s" aria-hidden="true">u</span><span class="sa-char" style="--sa-top:#d7b8ff;--sa-bottom:#8052ff;--sa-glow:#a875ff;--sa-delay:0.32s" aria-hidden="true">r</span><span class="sa-char" style="--sa-top:#a4ffe7;--sa-bottom:#12bda7;--sa-glow:#6dffe0;--sa-delay:0.48s" aria-hidden="true">a</span><span class="sa-char" style="--sa-top:#ffe7a3;--sa-bottom:#ff9e36;--sa-glow:#ffc76d;--sa-delay:0.64s" aria-hidden="true">j</span><span class="sa-char" style="--sa-top:#ffb7d9;--sa-bottom:#ff4fa2;--sa-glow:#ff81c4;--sa-delay:0.80s" aria-hidden="true">A</span><span class="sa-char" style="--sa-top:#c9f7ff;--sa-bottom:#40b6ff;--sa-glow:#73d6ff;--sa-delay:0.96s" aria-hidden="true">N</span><span class="sa-char" style="--sa-top:#e3c9ff;--sa-bottom:#9c64ff;--sa-glow:#bd8dff;--sa-delay:1.12s" aria-hidden="true">_</span><span class="sa-char" style="--sa-top:#fff2a6;--sa-bottom:#ffcc33;--sa-glow:#ffdc61;--sa-delay:1.28s" aria-hidden="true">9</span><span class="sa-char" style="--sa-top:#b7ffd5;--sa-bottom:#32d583;--sa-glow:#66f2ad;--sa-delay:1.44s" aria-hidden="true">5</span></span></a>
 
-
-<script id="stark-interaction-engine">
-(()=> {
- let soundOn=true,ctx=null,last=0;
- const getCtx=()=>{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;if(!ctx)ctx=new AC();if(ctx.state==="suspended")ctx.resume();return ctx};
- const sound=(kind="tap")=>{
-  if(!soundOn)return;const now=performance.now();if(now-last<48)return;last=now;
-  try{
-   const c=getCtx();if(!c)return;const t=c.currentTime;
-   const presets={tap:[620,880,.052,.022],nav:[440,660,.085,.025],toggle:[520,1040,.11,.028],submit:[390,780,.12,.03],check:[760,980,.045,.018]};
-   const p=presets[kind]||presets.tap;
-   const o=c.createOscillator(),g=c.createGain();o.type=kind==="nav"?"triangle":"sine";
-   o.frequency.setValueAtTime(p[0],t);o.frequency.exponentialRampToValueAtTime(p[1],t+p[2]*.72);
-   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(p[3],t+.006);g.gain.exponentialRampToValueAtTime(.0001,t+p[2]);
-   o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+p[2]+.01);
-   if(kind==="submit"){const o2=c.createOscillator(),g2=c.createGain();o2.type="sine";o2.frequency.setValueAtTime(980,t+.055);g2.gain.setValueAtTime(.0001,t+.055);g2.gain.exponentialRampToValueAtTime(.014,t+.065);g2.gain.exponentialRampToValueAtTime(.0001,t+.16);o2.connect(g2);g2.connect(c.destination);o2.start(t+.055);o2.stop(t+.17)}
-  }catch(e){}
- };
- const mount=()=>{
-  if(document.querySelector(".stark-sound-toggle"))return;
-  const b=document.createElement("button");b.type="button";b.className="stark-sound-toggle";b.setAttribute("aria-pressed","true");b.setAttribute("aria-label","Toggle interface sounds");
-  b.innerHTML='<span class="sound-dot"></span><span class="sound-label">SOUND ON</span>';
-  b.addEventListener("click",()=>{soundOn=!soundOn;b.setAttribute("aria-pressed",String(soundOn));b.querySelector(".sound-label").textContent=soundOn?"SOUND ON":"SOUND OFF";if(soundOn)sound("toggle")});
-  document.body.appendChild(b);
-  if(!document.querySelector(".stark-hud-flash")){const f=document.createElement("div");f.className="stark-hud-flash";f.setAttribute("aria-hidden","true");document.body.appendChild(f)}
- };
- document.addEventListener("pointerdown",e=>{
-  const el=e.target.closest("a,button,[role=button],input[type=submit],input[type=button],summary,.check,[data-sound]");
-  if(!el||el.classList.contains("stark-sound-toggle"))return;
-  sound(el.matches("a")?"nav":el.matches('input[type=submit]')?"submit":el.matches(".check")?"check":"tap");
-  const f=document.querySelector(".stark-hud-flash");if(f){f.classList.remove("active");void f.offsetWidth;f.classList.add("active")}
- },{passive:true});
- if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
-})();
-</script>
 
 </body>
 </html>
