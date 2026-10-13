@@ -15,7 +15,8 @@ header{max-width:900px;margin:auto;padding:28px 20px 18px;display:flex;justify-c
 @media(max-width:600px){.page{padding:22px;min-height:850px}.page h1{font-size:35px}.grid3{grid-template-columns:1fr}.foot{left:22px;right:22px}.week th,.week td{padding:5px;font-size:10px}.week td{height:65px}}
 @page{size:A4;margin:0}
 @media print{body{background:white;color:#111}header,.actions,.note{display:none!important}.book{max-width:none;margin:0;padding:0}.page{width:210mm;height:297mm;min-height:0;margin:0;padding:16mm 15mm;box-shadow:none;break-after:page;page-break-after:always;overflow:hidden}.page:last-child{break-after:auto;page-break-after:auto}.foot{left:15mm;right:15mm;bottom:8mm}.page h1{font-size:40pt}.week td{height:17mm}.lines{height:40mm}}
-</style></head>
+</style><link rel="stylesheet" href="stark-ui.css?v=20261013-mk2">
+</head>
 <body>
 <header><strong>SURAJAN_95 <span style="color:#bdf31d">/ PLANNER LAB</span></strong><a href="index.html">← EVERYTHING WORLD</a></header>
 <div class="actions"><button class="btn primary" onclick="window.print()">Print / Save as PDF ↗</button><button class="btn" onclick="document.querySelectorAll('[contenteditable]').forEach((e)=>e.contentEditable=e.contentEditable==='true'?'false':'true')">Toggle edit mode</button></div>
@@ -28,4 +29,39 @@ header{max-width:900px;margin:auto;padding:28px 20px 18px;display:flex;justify-c
 <section class="page"><div class="eyebrow">04 / Learn and improve</div><h2>Weekly review</h2><p class="sub">Review honestly. Keep what worked, adjust what did not, and choose a better next step.</p><div class="label">What went well?</div><div class="field lines" contenteditable="true"></div><div class="label" style="margin-top:20px">What stayed unfinished — and why?</div><div class="field lines" contenteditable="true"></div><div class="grid2" style="margin-top:20px"><div><div class="label">Biggest lesson</div><div class="field" style="min-height:95px" contenteditable="true"></div></div><div><div class="label">What I will change next week</div><div class="field" style="min-height:95px" contenteditable="true"></div></div></div><div class="label" style="margin-top:22px">How did the week feel?</div><div class="rating"><span>1 — Tough</span><span>2 — Uneven</span><span>3 — Okay</span><span>4 — Good</span><span>5 — Great</span></div><div class="label">My first action for next week</div><div class="field" contenteditable="true"></div><div class="foot"><span>SURAJAN_95 · WEEKLY FOCUS</span><span>05 / REVIEW. RESET. REPEAT.</span></div></section>
 </main>
 <a href="index.html" style="position:fixed;right:12px;bottom:12px;background:#091525;border:1px solid #8ca9ce;border-radius:999px;padding:10px 13px;color:#d9f7ff;text-decoration:none;font-size:11px;letter-spacing:.12em">SURAJAN_95</a>
+
+<script id="stark-interaction-engine">
+(()=> {
+ let soundOn=true,ctx=null,last=0;
+ const boot=()=>{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;if(!ctx)ctx=new AC();if(ctx.state==="suspended")ctx.resume();return ctx};
+ const tick=(kind="tap")=>{
+  if(!soundOn)return;const now=performance.now();if(now-last<55)return;last=now;
+  try{const c=boot();if(!c)return;const t=c.currentTime;
+   const osc=c.createOscillator(),gain=c.createGain();
+   osc.type="sine";osc.frequency.setValueAtTime(kind==="nav"?640:kind==="toggle"?760:520,t);
+   osc.frequency.exponentialRampToValueAtTime(kind==="nav"?920:kind==="toggle"?1120:700,t+.045);
+   gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.032,t+.006);gain.gain.exponentialRampToValueAtTime(.0001,t+.075);
+   osc.connect(gain);gain.connect(c.destination);osc.start(t);osc.stop(t+.08);
+   if(kind==="toggle"){const o=c.createOscillator(),g=c.createGain();o.type="sine";o.frequency.setValueAtTime(soundOn?980:360,t+.045);g.gain.setValueAtTime(.0001,t+.045);g.gain.exponentialRampToValueAtTime(.018,t+.052);g.gain.exponentialRampToValueAtTime(.0001,t+.12);o.connect(g);g.connect(c.destination);o.start(t+.045);o.stop(t+.13)}
+  }catch(e){}
+ };
+ const styleButton=()=> {
+  if(document.querySelector(".stark-sound-toggle"))return;
+  const b=document.createElement("button");b.type="button";b.className="stark-sound-toggle";b.setAttribute("aria-pressed","true");b.setAttribute("aria-label","Toggle interface sounds");
+  b.innerHTML='<span class="sound-dot"></span><span class="sound-label">SOUND ON</span>';
+  b.addEventListener("click",()=>{soundOn=!soundOn;b.setAttribute("aria-pressed",String(soundOn));b.querySelector(".sound-label").textContent=soundOn?"SOUND ON":"SOUND OFF";if(soundOn)tick("toggle");});
+  document.body.appendChild(b);
+  const flash=document.createElement("div");flash.className="stark-hud-flash";flash.setAttribute("aria-hidden","true");document.body.appendChild(flash);
+ };
+ document.addEventListener("pointerdown",e=>{
+  const target=e.target.closest("a,button,[role=button],input[type=submit],input[type=button],summary,.check,[data-sound]");
+  if(!target||target.classList.contains("stark-sound-toggle"))return;
+  tick(target.matches("a")?"nav":"tap");
+  const flash=document.querySelector(".stark-hud-flash");if(flash){flash.classList.remove("active");void flash.offsetWidth;flash.classList.add("active")}
+ },{passive:true});
+ document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("a,button,[role=button],summary"))tick("tap")});
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",styleButton,{once:true});else styleButton();
+})();
+</script>
+
 </body></html>
