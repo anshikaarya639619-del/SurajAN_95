@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080b12">
+<meta name="description" content="Everything World — explore knowledge, skills, science, technology, culture, travel and ideas in one place.">
+<title>EVERYTHING WORLD — Explore What Matters</title>
+<style>
+:root{color-scheme:dark;--bg:#080b12;--panel:#101621;--line:#222c3c;--muted:#9aa8bb;--text:#f4f7fb;--blue:#83aaff;--mint:#7ce8c4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% -15%,#1d3157 0,transparent 42%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;border-bottom:1px solid #ffffff12}.brand{font-size:15px;font-weight:900;letter-spacing:.12em}.brand span{color:var(--mint)}.navlinks{display:flex;gap:20px;color:var(--muted);font-size:13px}.hero{padding:76px 0 46px;max-width:850px}.eyebrow{display:inline-flex;gap:8px;align-items:center;border:1px solid #ffffff20;border-radius:99px;padding:7px 12px;color:#c4d4ef;font-size:12px;letter-spacing:.08em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 14px var(--mint)}h1{font-size:clamp(42px,8vw,82px);line-height:.99;letter-spacing:-.065em;margin:24px 0 22px;max-width:820px}h1 em{font-style:normal;color:var(--blue)}.intro{font-size:clamp(16px,2.4vw,20px);color:#aebbd0;max-width:620px}.search{display:flex;gap:10px;margin-top:30px;max-width:640px}.search input{min-width:0;flex:1;background:#111925;border:1px solid #303b4c;color:white;border-radius:13px;padding:15px 16px;outline:none}.search input:focus{border-color:var(--blue)}.btn{border:0;border-radius:12px;background:#eaf0ff;color:#101522;font-weight:800;padding:14px 18px;cursor:pointer}.btn:hover{transform:translateY(-1px)}.micro{font-size:12px;color:#7f8da2;margin-top:12px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:30px 0 18px}.sectionhead h2{font-size:24px;letter-spacing:-.04em;margin:0}.sectionhead p{margin:4px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.tile{position:relative;overflow:hidden;background:linear-gradient(145deg,#131c2a,#0d121b);border:1px solid var(--line);border-radius:18px;padding:22px;min-height:165px;transition:transform .2s,border-color .2s}.tile:hover{transform:translateY(-3px);border-color:#526c97}.emoji{font-size:24px}.tile h3{font-size:17px;margin:14px 0 5px}.tile p{font-size:13px;color:var(--muted);margin:0}.tag{position:absolute;right:16px;top:17px;font-size:10px;color:#91a2ba;border:1px solid #ffffff18;border-radius:99px;padding:3px 7px}.feature{margin:46px 0 60px;border:1px solid #29374a;border-radius:22px;padding:26px;background:linear-gradient(110deg,#111a29,#0d121b)}.feature h2{font-size:clamp(24px,4vw,38px);letter-spacing:-.045em;margin:0 0 10px}.feature p{max-width:660px;color:var(--muted);margin:0 0 18px}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid #ffffff1c;color:#c5d2e5;border-radius:99px;padding:7px 11px;font-size:12px}.footer{border-top:1px solid #ffffff14;padding:24px 0 34px;color:#8290a5;font-size:12px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.status{margin-top:12px;color:var(--mint);font-size:13px;min-height:20px}
+@media(max-width:720px){.navlinks{gap:12px}.navlinks a:nth-child(2){display:none}.hero{padding:54px 0 30px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tile{padding:17px;min-height:158px}.search{flex-direction:column}.btn{width:100%}.sectionhead{align-items:start;flex-direction:column}.feature{padding:21px}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}.tile{min-height:130px}.tile h3{margin-top:9px}h1{font-size:45px}.navlinks{font-size:12px}}
+</style>
+</head>
+<body>
+<header class="wrap nav">
+<a class="brand" href="#" aria-label="Everything World home">EVERYTHING <span>WORLD</span></a>
+<nav class="navlinks" aria-label="Main navigation"><a href="#explore">Explore</a><a href="#mission">Our mission</a><a href="#footer">About</a></nav>
+</header>
+<main class="wrap">
+<section class="hero">
+<div class="eyebrow"><span class="dot"></span> A world of knowledge, connected</div>
+<h1>One world.<br><em>Endless things</em><br>to discover.</h1>
+<p class="intro">A growing home for knowledge, skills, science, technology, culture and the ideas that move humanity forward.</p>
+<form class="search" id="searchForm" role="search"><input id="searchInput" type="search" placeholder="What do you want to explore?" aria-label="Search topics"><button class="btn" type="submit">Explore topics ↗</button></form>
+<div class="micro">Curiosity first. Useful knowledge. Built for everyone.</div>
+<div class="status" id="searchStatus" aria-live="polite"></div>
+</section>
+<section id="explore">
+<div class="sectionhead"><div><h2>Explore the universe</h2><p>Choose a direction. Start anywhere.</p></div><span class="micro">THE WORLD, IN CATEGORIES</span></div>
+<div class="grid" id="topicGrid">
+<a class="tile" href="#mission" data-topic="education learning school exams"><span class="tag">LEARN</span><div class="emoji">📚</div><h3>Education</h3><p>Concepts, study guides and lifelong learning.</p></a>
+<a class="tile" href="#mission" data-topic="science nature space physics biology"><span class="tag">DISCOVER</span><div class="emoji">🔬</div><h3>Science & Nature</h3><p>Understand the universe and life around us.</p></a>
+<a class="tile" href="#mission" data-topic="technology ai computers engineering"><span class="tag">BUILD</span><div class="emoji">⚙️</div><h3>Technology</h3><p>AI, computing, inventions and what's next.</p></a>
+<a class="tile" href="#mission" data-topic="business money entrepreneurship careers"><span class="tag">CREATE</span><div class="emoji">🌐</div><h3>Business & Ideas</h3><p>Entrepreneurship, careers and practical thinking.</p></a>
+<a class="tile" href="#mission" data-topic="travel places geography culture food"><span class="tag">EXPLORE</span><div class="emoji">🧭</div><h3>Travel & Culture</h3><p>Places, people, traditions and perspectives.</p></a>
+<a class="tile" href="#mission" data-topic="skills language creativity fitness personal growth"><span class="tag">GROW</span><div class="emoji">🚀</div><h3>Skills & Life</h3><p>Languages, creativity and useful everyday skills.</p></a>
+</div>
+</section>
+<section class="feature" id="mission">
+<div class="eyebrow">Our guiding principle</div>
+<h2>Make the world's knowledge easier to explore.</h2>
+<p>EVERYTHING WORLD starts with a simple mission: organize useful information into clear paths people can understand and act on. This is the first public MVP; topic pages, search indexing and multilingual content will be added in stages.</p>
+<div class="chips"><span class="chip">🌍 Global perspective</span><span class="chip">🧠 Learn by exploring</span><span class="chip">🔎 Clear and useful</span><span class="chip">🛠️ Built in public</span></div>
+</section>
+</main>
+<footer class="wrap footer" id="footer"><span>© <span id="year"></span> EVERYTHING WORLD</span><span>Made for curious minds everywhere.</span><span>Early MVP · More coming</span></footer>
+<script>
+const form=document.getElementById('searchForm'),input=document.getElementById('searchInput'),status=document.getElementById('searchStatus'),tiles=[...document.querySelectorAll('.tile')];
+document.getElementById('year').textContent=new Date().getFullYear();
+form.addEventListener('submit',e=>{e.preventDefault();const q=input.value.trim().toLowerCase();let count=0;tiles.forEach(tile=>{const match=!q||(tile.innerText+' '+tile.dataset.topic).toLowerCase().includes(q);tile.hidden=!match;if(match)count++});status.textContent=q?(count?count+' topic area(s) match your search.':'No exact category match yet. Try education, science, technology, business, travel or skills.'):'Showing all topic areas.';document.getElementById('explore').scrollIntoView({behavior:'smooth'});});
+input.addEventListener('input',()=>{if(!input.value.trim()){tiles.forEach(t=>t.hidden=false);status.textContent='';}});
+</script>
+</body>
+</html>
