@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 /* EVERYTHING WORLD // STARK INTERFACE SYSTEM
    Original cinematic sci-fi interface: precision, restraint, readable contrast. */
 :root{
@@ -318,7 +319,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #ffca
  --st-text:#fff8f1;--st-muted:#b7a9a0;--st-cyan:#ff9a5b;--st-blue:#ff6f91;
  --st-amber:#ffe0a8;--st-violet:#c2a1ff;
 }
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
 html{scroll-behavior:smooth;background:#0d0c10}
 body{
  color:#fff8f1!important;
