@@ -387,3 +387,63 @@ footer,.footer,.foot{border-top:1px solid rgba(255,154,91,.2)!important;color:#b
 @keyframes stark-pulse{0%{opacity:.24;border-color:rgba(255,154,91,.25)}100%{opacity:0;border-color:transparent}}
 @media(max-width:640px){body:after{top:auto;bottom:58px;right:8px;font-size:8px;padding:5px 7px}.stark-sound-toggle{right:9px!important;bottom:9px!important;min-height:35px!important;font-size:9px!important}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+
+/* PHASE IV — REACTOR / CINEMATIC COMMAND INTERFACE
+   Original sci-fi visual system; structural override, not a palette-only refresh. */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root{
+ --st-bg:#05080c;--st-surface:#0b1118;--st-surface-2:#101a23;
+ --st-line:rgba(255,145,64,.24);--st-line-hot:rgba(255,145,64,.72);
+ --st-text:#f4f1e9;--st-muted:#a3adb7;--st-cyan:#ff9b45;--st-blue:#ff5b36;
+ --st-amber:#ffc477;--st-violet:#e1e8ee;
+ --reactor:#ff8c3a;--reactor-hot:#ffb35f;--reactor-red:#ff553e;
+}
+html{background:#05080c!important;scroll-behavior:smooth}
+body{background:radial-gradient(ellipse at 50% -20%,#40200f 0%,transparent 44%),radial-gradient(ellipse at 100% 70%,#17130f 0%,transparent 35%),#05080c!important;color:#f4f1e9!important;font-family:Inter,Arial,sans-serif!important;letter-spacing:0!important}
+body:before{opacity:.12!important;background-image:linear-gradient(rgba(255,143,61,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,143,61,.12) 1px,transparent 1px)!important;background-size:34px 34px!important;mask-image:linear-gradient(to bottom,black,transparent 82%)!important}
+body:after{content:"S.A. / REACTOR SYSTEMS   •   INTERFACE ACTIVE"!important;top:auto!important;right:14px!important;bottom:12px!important;letter-spacing:.16em!important;color:#ffb36c!important;border-color:#ff8c3a50!important;background:#080b0ee8!important;border-radius:2px!important;font:500 8px/1.4 'IBM Plex Mono',monospace!important;box-shadow:0 0 22px #ff8c3a12!important;z-index:9999!important}
+h1,h2,h3,h4,.brand,.brandmark,.section-head h2,.hero h1{font-family:Orbitron,Inter,sans-serif!important;letter-spacing:-.045em!important}
+h1,.hero h1{font-weight:700!important;text-shadow:0 0 30px #ff8c3a19!important}
+a:hover{color:#ffb36c!important}
+.nav,.topbar{border-color:#ff8c3a30!important}
+.nav:after{background:linear-gradient(90deg,#ff8c3a,transparent)!important;box-shadow:0 0 16px #ff8c3a!important}
+.brand,.brandmark{letter-spacing:.08em!important}
+.brand span,.breadcrumb b,.eyebrow,.kicker,.mod-tag,.section-head small{color:#ffad62!important}
+.brandicon{background:linear-gradient(145deg,#ffe0ae,#ff8c3a 60%,#d94128)!important;color:#180d06!important;border-radius:3px!important;box-shadow:0 0 28px #ff8c3a30!important}
+.eyebrow:before{background:#fff0d8!important;box-shadow:0 0 10px #ff8c3a!important}
+.panel,.card,.tile,.feature,.step,.stat,.result,.notice,.faq,.task,.path,.profile,.welcome,
+.module,.metric,.rail-foot,.hero-visual,.orbit-label,.searchbox input,.searchbox select{
+ background:linear-gradient(135deg,rgba(22,25,28,.97),rgba(8,11,14,.98))!important;
+ border:1px solid #ff9b4530!important;border-radius:3px!important;
+ box-shadow:inset 0 1px #ffffff09,0 15px 42px #0006!important;
+ backdrop-filter:blur(14px)
+}
+.panel:before,.card:before,.tile:before,.feature:before,.step:before,.stat:before,.result:before,.notice:before,.path:before{background:linear-gradient(90deg,#ff8c3a,transparent)!important;width:96px!important}
+.panel:hover,.card:hover,.tile:hover,.feature:hover,.step:hover,.stat:hover,.path:hover,.module:hover{border-color:#ff9b4580!important;box-shadow:0 18px 44px #0008,0 0 25px #ff8c3a0c!important;transform:translateY(-3px)}
+.btn,button,.button,input[type=submit],a.button,.action-primary,.action-secondary{
+ border-radius:2px!important;font-family:'IBM Plex Mono',monospace!important;text-transform:uppercase!important;letter-spacing:.09em!important;font-size:11px!important;min-height:45px!important;
+}
+.btn,button,.button,input[type=submit],a.button,.action-primary{
+ color:#1b0d04!important;background:linear-gradient(105deg,#ffc477,#ff8c3a 62%,#ff6344)!important;border:1px solid #ffc477!important;box-shadow:0 0 25px #ff8c3a1b,inset 0 1px #fff7!important
+}
+.btn.secondary,.secondary,.action-secondary{background:#0a0d10!important;color:#f3c79c!important;border:1px solid #ff9b4550!important;box-shadow:none!important}
+.btn:hover,button:hover,.button:hover,a.button:hover,.action-primary:hover,.action-secondary:hover{filter:brightness(1.13)!important;box-shadow:0 0 28px #ff8c3a2a!important}
+input,textarea,select,.select{background:#080c10!important;color:#f5f0e8!important;border-color:#ff9b4540!important;border-radius:2px!important}
+input:focus,textarea:focus,select:focus,.select:focus{outline:1px solid #ff9b45!important;outline-offset:3px}
+.tag,.pill,.chip,.num,.status,.micro{background:#ff8c3a0c!important;color:#ffc18b!important;border-color:#ff9b4540!important;border-radius:2px!important;font-family:'IBM Plex Mono',monospace!important}
+.rail-link{border-radius:2px!important;font-family:'IBM Plex Mono',monospace!important;letter-spacing:.025em}
+.rail-link.active,.rail-link:hover{background:linear-gradient(90deg,#ff8c3a1b,transparent)!important;border-color:#ff9b4530!important;box-shadow:inset 2px 0 #ff9b45!important}
+.hero-visual{background:radial-gradient(ellipse at 50% 45%,#5a2d1250,transparent 48%),linear-gradient(150deg,#171513,#080a0c 75%)!important}
+.core{filter:sepia(1) saturate(2.2) hue-rotate(335deg) drop-shadow(0 0 30px #ff8c3a45)!important}
+.orbit-label{color:#ffc18b!important}
+.metric:before{background:linear-gradient(90deg,transparent,#ff9b45,transparent)!important}
+.metric em{color:#ffc18b!important}
+.module .arrow{color:#ffad62!important}
+.hero:after{border-color:#ff9b4530!important;background:radial-gradient(circle,#ff9b4520 0 2%,transparent 3% 24%,#ff9b4517 25% 26%,transparent 27% 48%,#ff9b4533 49% 50%,transparent 51%),conic-gradient(from 10deg,transparent 0 12%,#ff9b4570 13%,transparent 14% 42%,#f3e5d1 43%,transparent 44% 75%,#ff9b4560 76%,transparent 77%)!important}
+.hero:before{background:#fff0d8!important;box-shadow:0 0 9px #ff9b45,0 0 30px #ff553e!important}
+::selection{background:#ff8c3a55!important;color:#fff!important}
+:focus-visible{outline:2px solid #ffb35f!important}
+.sa-signature{border-color:#ff9b4580!important;background:linear-gradient(135deg,#090b0df2,#1d1711ed)!important;box-shadow:0 0 28px #ff8c3a1c!important}
+@media(max-width:640px){body:after{right:6px!important;bottom:6px!important;font-size:7px!important}.navlinks{gap:8px 12px!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
