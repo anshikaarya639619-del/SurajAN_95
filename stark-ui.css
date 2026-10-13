@@ -256,3 +256,56 @@ footer,.footer,.foot{border-color:rgba(210,255,42,.16)!important;color:#a4a8b2!i
  .panel,.tile,.card,.step,.feature{border-radius:12px!important}
 }
 @media(prefers-reduced-motion:reduce){.hero:before,.hero:after{animation:none!important}}
+
+
+/* STARK MK-II // full visual pass: reactor glass, instrument panels, precise motion */
+:root{
+ --st-bg:#03060d;--st-surface:rgba(10,18,31,.86);--st-surface-2:#091221;
+ --st-line:rgba(105,219,255,.22);--st-line-hot:rgba(97,239,255,.72);
+ --st-text:#f4faff;--st-muted:#9aafc6;--st-cyan:#65f0ff;--st-blue:#719cff;
+ --st-amber:#ffca78;--st-violet:#ba9cff;
+}
+html{background:#03060d}
+body{
+ background:radial-gradient(ellipse at 50% -24%,rgba(21,116,167,.27),transparent 45%),
+ radial-gradient(ellipse at 100% 55%,rgba(83,44,148,.12),transparent 35%),
+ linear-gradient(180deg,#03060d,#070c17 46%,#03060d)!important;
+}
+body:before{opacity:.12;background-size:36px 36px;background-image:linear-gradient(rgba(101,240,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(101,240,255,.09) 1px,transparent 1px)}
+/* Instrument-frame treatment */
+.nav,header,.topbar,.top{backdrop-filter:blur(18px)}
+.panel,.card,.tile,.feature,.step,.stat,.result,.notice,.faq,.task,.path,.profile,.welcome{
+ border-radius:7px!important;
+ background:linear-gradient(135deg,rgba(13,27,45,.94),rgba(5,12,23,.96))!important;
+ box-shadow:0 18px 55px rgba(0,0,0,.24),inset 0 1px rgba(255,255,255,.055),inset 0 0 35px rgba(101,240,255,.025)!important;
+}
+.panel:after,.card:after,.tile:after,.feature:after,.step:after,.stat:after{
+ content:"";position:absolute;right:0;top:0;width:26px;height:26px;border-top:1px solid rgba(101,240,255,.55);border-right:1px solid rgba(101,240,255,.55);pointer-events:none;opacity:.7
+}
+h1,h2,h3{letter-spacing:-.045em}
+.eyebrow,.tag,.pill,.chip,.micro{font-family:ui-monospace,SFMono-Regular,Menlo,monospace!important}
+.btn,button,.button,input[type=submit],a.button{
+ border-radius:5px!important;
+ background:linear-gradient(110deg,#d5fbff,#64e8ff 52%,#9cbaff)!important;
+ box-shadow:0 0 20px rgba(101,240,255,.16),inset 0 1px rgba(255,255,255,.75)!important;
+}
+.btn:active,button:active,.button:active,a.button:active{transform:scale(.975)!important;filter:brightness(.92)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #ffca78!important;outline-offset:3px}
+::selection{background:rgba(101,240,255,.38);color:#fff}
+/* A small, original HUD marker — not a copy of any franchise interface */
+.stark-sound-toggle{
+ position:fixed!important;z-index:99999!important;right:14px!important;bottom:14px!important;
+ display:flex!important;align-items:center!important;gap:8px!important;min-height:38px!important;
+ padding:9px 12px!important;border:1px solid rgba(101,240,255,.48)!important;border-radius:5px!important;
+ color:#dffbff!important;background:rgba(3,10,19,.94)!important;
+ box-shadow:0 0 22px rgba(101,240,255,.10)!important;font:800 10px/1 ui-monospace,monospace!important;
+ letter-spacing:.12em!important;backdrop-filter:blur(14px)!important;cursor:pointer!important
+}
+.stark-sound-toggle .sound-dot{width:7px;height:7px;border-radius:50%;background:#65f0ff;box-shadow:0 0 10px #65f0ff}
+.stark-sound-toggle[aria-pressed="false"] .sound-dot{background:#708096;box-shadow:none}
+.stark-sound-toggle[aria-pressed="false"]{color:#94a8bd!important;border-color:rgba(150,170,195,.25)!important}
+.stark-hud-flash{position:fixed;inset:0;pointer-events:none;z-index:99990;opacity:0;border:2px solid rgba(101,240,255,.0)}
+.stark-hud-flash.active{animation:stark-pulse .18s ease-out}
+@keyframes stark-pulse{0%{opacity:.5;border-color:rgba(101,240,255,.3)}100%{opacity:0;border-color:rgba(101,240,255,0)}}
+@media(max-width:640px){.stark-sound-toggle{right:9px!important;bottom:9px!important;min-height:35px!important;font-size:9px!important}}
+@media(prefers-reduced-motion:reduce){.stark-sound-toggle,.stark-hud-flash{animation:none!important}}
