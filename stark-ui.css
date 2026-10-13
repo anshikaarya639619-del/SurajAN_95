@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 /* EVERYTHING WORLD // STARK INTERFACE SYSTEM
    Original cinematic sci-fi interface: precision, restraint, readable contrast. */
 :root{
@@ -554,7 +554,6 @@ footer{border-color:#333!important;color:#817b77!important}
 
 
 /* === JARVIS / ARC-LAB INTERFACE — VISUAL OVERHAUL 2026-10 === */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 :root{
   color-scheme:dark;
   --bg:#03070d;--bg-2:#07111b;--panel:#091724;--panel-2:#0b1e2c;
