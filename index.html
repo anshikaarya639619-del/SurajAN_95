@@ -11,7 +11,7 @@
 <meta property="og:description" content="One interface. Infinite directions. Explore tools, knowledge and technology.">
 <meta property="og:type" content="website">
 <title>EVERYTHING WORLD — Curiosity Engine</title>
-<link rel="stylesheet" href="stark-ui.css?v=20261013g">
+<link rel="stylesheet" href="stark-ui.css?v=20261013h">
 <style>
 :root{--ink:#eaf5ff;--dim:#91a7c0;--cyan:#61e8ff;--edge:rgba(116,207,255,.18);--glass:rgba(8,17,31,.78)}
 *{box-sizing:border-box}
@@ -213,6 +213,59 @@ body.home-command .sa-char{text-shadow:0 0 9px var(--sa-glow),0 0 20px var(--sa-
 @keyframes ew-holo-orbit{to{transform:translate(-50%,-50%) rotate(340deg)}}
 @media(max-width:650px){body.home-command .sa-signature{right:8px!important;bottom:8px!important;padding:7px 9px!important;gap:5px!important}body.home-command .sa-signature:before{display:none}body.home-command .hero-visual:after{width:250px}body.home-command .module,body.home-command .metric{backdrop-filter:blur(15px) saturate(135%);-webkit-backdrop-filter:blur(15px) saturate(135%)}}
 @media(prefers-reduced-motion:reduce){body.home-command .hero-visual:after{animation:none!important}}
+
+
+/* TRANSPARENT HOLOGRAM PASS 2 — make the glass visibly glass, not painted cards */
+body.home-command{
+ background-color:#02050c!important;
+ background-image:
+  radial-gradient(ellipse at 50% 35%,rgba(39,177,255,.13),transparent 52%),
+  linear-gradient(rgba(89,222,255,.075) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(89,222,255,.075) 1px,transparent 1px),
+  linear-gradient(rgba(89,222,255,.025) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(89,222,255,.025) 1px,transparent 1px)!important;
+ background-size:auto,44px 44px,44px 44px,11px 11px,11px 11px!important;
+}
+body.home-command:before{content:"";position:fixed;inset:0;z-index:100;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(120,222,255,.025) 0px,rgba(120,222,255,.025) 1px,transparent 2px,transparent 5px),linear-gradient(90deg,rgba(4,13,27,.14),transparent 18%,transparent 82%,rgba(4,13,27,.14));opacity:.48}
+body.home-command .shell:before{background:radial-gradient(ellipse at 50% 20%,rgba(69,207,255,.10),transparent 60%),linear-gradient(115deg,transparent 0 48%,rgba(83,221,255,.035) 49%,transparent 50% 100%)!important}
+body.home-command .topbar{background:rgba(10,26,44,.18)!important;backdrop-filter:blur(7px) saturate(175%)!important;-webkit-backdrop-filter:blur(7px) saturate(175%)!important;border-bottom:1px solid rgba(127,231,255,.38)!important;box-shadow:0 1px 0 rgba(255,255,255,.035)}
+body.home-command .rail-link,body.home-command .rail-foot,body.home-command .metric,body.home-command .module,body.home-command .bottom-band{
+ background:rgba(8,22,39,.19)!important;
+ backdrop-filter:blur(9px) saturate(175%)!important;-webkit-backdrop-filter:blur(9px) saturate(175%)!important;
+ border:1px solid rgba(128,226,255,.32)!important;border-radius:3px!important;
+ box-shadow:inset 0 1px 0 rgba(235,252,255,.14),inset 0 0 24px rgba(74,193,255,.025),0 14px 40px rgba(0,0,0,.10)!important;
+}
+body.home-command .rail-link.active,body.home-command .rail-link:hover{background:rgba(50,172,225,.13)!important;border-color:rgba(135,239,255,.7)!important;box-shadow:inset 2px 0 #8df4ff,0 0 20px rgba(53,209,255,.12)!important}
+body.home-command .hero-visual{
+ background:linear-gradient(135deg,rgba(43,139,187,.12),rgba(5,15,31,.12) 45%,rgba(86,75,172,.12))!important;
+ backdrop-filter:blur(5px) saturate(180%)!important;-webkit-backdrop-filter:blur(5px) saturate(180%)!important;
+ border:1px solid rgba(128,237,255,.72)!important;border-radius:3px!important;
+ box-shadow:inset 0 0 0 1px rgba(255,255,255,.10),inset 0 0 70px rgba(54,186,255,.11),0 0 38px rgba(54,201,255,.09)!important;
+}
+body.home-command .hero-visual:before{inset:8px!important;border:1px solid rgba(137,239,255,.25)!important;background:linear-gradient(125deg,rgba(201,250,255,.12),transparent 17% 80%,rgba(124,137,255,.10))!important}
+body.home-command .hero-visual:after{border-color:rgba(143,240,255,.5)!important;box-shadow:0 0 0 13px rgba(86,221,255,.065),0 0 0 31px rgba(86,221,255,.045),0 0 0 55px rgba(86,221,255,.025),inset 0 0 35px rgba(84,196,255,.06)!important}
+body.home-command .core{filter:drop-shadow(0 0 22px rgba(57,207,255,.72)) drop-shadow(0 0 80px rgba(64,114,255,.24))!important}
+body.home-command .orbit-label{background:rgba(2,10,22,.19)!important;border:1px solid rgba(129,235,255,.76)!important;backdrop-filter:blur(6px) saturate(190%)!important;-webkit-backdrop-filter:blur(6px) saturate(190%)!important;box-shadow:inset 0 1px rgba(255,255,255,.19),0 0 18px rgba(70,208,255,.09)!important}
+body.home-command .metric:after,body.home-command .module:before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,rgba(174,246,255,.08),transparent 24% 72%,rgba(124,137,255,.045));opacity:.75}
+body.home-command .metric:before{height:1px!important;background:linear-gradient(90deg,transparent,#9df4ff,rgba(166,162,255,.8),transparent)!important}
+body.home-command .module{overflow:hidden!important}
+body.home-command .module:after{border-color:rgba(119,235,255,.30)!important;box-shadow:0 0 0 14px rgba(97,232,255,.06),0 0 0 28px rgba(97,232,255,.035)!important}
+body.home-command .module:hover{background:rgba(25,77,105,.25)!important;border-color:rgba(142,242,255,.85)!important;box-shadow:inset 0 1px rgba(255,255,255,.2),0 0 28px rgba(66,207,255,.13)!important}
+body.home-command .kicker,body.home-command .action-secondary,body.home-command .searchbox input,body.home-command .searchbox select{
+ background:rgba(8,30,49,.20)!important;backdrop-filter:blur(8px) saturate(180%)!important;-webkit-backdrop-filter:blur(8px) saturate(180%)!important;border-color:rgba(126,226,255,.45)!important;border-radius:3px!important
+}
+body.home-command .action-primary{border-radius:3px!important;box-shadow:0 0 22px rgba(67,215,255,.14),inset 0 1px rgba(255,255,255,.8)!important}
+body.home-command .sa-signature{background:rgba(5,18,33,.24)!important;border:1px solid rgba(129,233,255,.66)!important;border-radius:3px!important;backdrop-filter:blur(8px) saturate(180%)!important;-webkit-backdrop-filter:blur(8px) saturate(180%)!important;box-shadow:inset 0 1px rgba(255,255,255,.18),0 0 25px rgba(66,198,255,.18)!important}
+body.home-command .sa-signature:before{color:rgba(170,239,255,.9)!important}
+body.home-command .sa-char{text-shadow:0 0 7px var(--sa-glow),0 0 18px var(--sa-glow),0 0 30px rgba(255,255,255,.13)!important}
+body.home-command footer{border-top-color:rgba(127,231,255,.32)!important}
+@media(max-width:650px){
+ body.home-command:before{opacity:.28}
+ body.home-command .rail{background:rgba(5,15,29,.18)!important;backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important}
+ body.home-command .hero-visual{min-height:330px}
+ body.home-command .hero-visual:after{width:240px}
+ body.home-command .rail-link,body.home-command .rail-foot,body.home-command .metric,body.home-command .module,body.home-command .bottom-band{background:rgba(8,22,39,.27)!important}
+}
 
 </style>
 </head>
