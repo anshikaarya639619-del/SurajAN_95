@@ -643,3 +643,27 @@ img,svg{max-width:100%}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 /* === END ARC-LAB OVERHAUL === */
+
+
+/* GLOBAL FORCE OVERRIDE — remove legacy lime/yellow/blue theme tokens */
+:root{--ink:#e9fbff!important;--dim:#91b7c8!important;--cyan:#45e7ff!important;--edge:rgba(69,231,255,.25)!important;--glass:rgba(5,18,29,.92)!important;--st-bg:#03070d!important;--st-surface:rgba(7,20,32,.94)!important;--st-surface-2:#091b29!important;--st-line:rgba(69,231,255,.24)!important;--st-text:#e9fbff!important;--st-muted:#91b7c8!important;--st-cyan:#45e7ff!important;--st-blue:#168dff!important;--st-amber:#45e7ff!important;--st-violet:#55bfff!important}
+html,body{background-color:#03070d!important;color:#e9fbff!important}
+body,body *{font-family:'Rajdhani',sans-serif!important}
+h1,h2,h3,h4,h5,h6,.brand,.brandmark,.brand-mark,.brandicon,.eyebrow,.kicker,.rail-label,.breadcrumb,.topright,.visual-top,.visual-bottom,.metric strong,.num,.tag,.pill,.stat-label,.section-title,.nav-label{font-family:'Orbitron',sans-serif!important}
+code,pre,.mono,.live,.uptime,.timestamp,.rail-label,.breadcrumb,.visual-top,.visual-bottom{font-family:'IBM Plex Mono',monospace!important}
+body *{scrollbar-color:#1a8ba7 #03070d}
+body :is(.lime,.yellow,.gold,.amber,.orange,.highlight,.accent,.text-lime,.text-yellow,.status,.status-good){color:#45e7ff!important}
+body :is(.panel,.card,.tile,.metric,.metric-card,.stat-card,.step,.book,.section,.welcome,.hero-visual,.rail-foot,.action-secondary,.orbit-label,.tool-card,.feature,.planner-card,.rail-link.active,.rail-link:hover){
+ background-color:#071724!important;border-color:rgba(69,231,255,.27)!important;color:#e9fbff!important;
+ box-shadow:0 0 24px rgba(28,177,222,.09),inset 0 1px rgba(110,238,255,.05)!important;border-radius:4px!important
+}
+body :is(.action-primary,.btn.primary,.button.primary,.btn-primary,.primary,.submit){
+ background:linear-gradient(110deg,#7af4ff,#168dff)!important;color:#001018!important;border:1px solid #9bf7ff!important
+}
+body :is(.action-secondary,.btn-secondary,.secondary){background:#071724!important;color:#c7f7ff!important;border:1px solid rgba(69,231,255,.35)!important}
+body a{color:#67eaff!important}
+body a:hover{color:#fff!important}
+body p,body li,body label,body small,body .sub,body .lead,body .note,body .dim{color:#a8c4d0!important}
+body input,body textarea,body select{background:#03101a!important;color:#e9fbff!important;border-color:rgba(69,231,255,.35)!important}
+body .hero h1 span{color:#65eaff!important;background:none!important;-webkit-text-fill-color:#65eaff!important}
+body .brandicon{background:linear-gradient(145deg,#a5faff,#22c5ec)!important;color:#001018!important}
