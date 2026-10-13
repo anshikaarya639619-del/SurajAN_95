@@ -23,6 +23,15 @@ Workflow files:
 
 Validator: `scripts/validate_site.py`
 
+## Weekly Focus Planner product
+
+- Browser-based planner: https://anshikaarya639619-del.github.io/SurajAN_95/weekly-focus-planner.html
+- Promotion/share kit (caption, Story copy, hashtags): https://anshikaarya639619-del.github.io/SurajAN_95/planner-share-kit.html
+- Canva editable source: https://www.canva.com/d/LWHjRC3bv84R_gl
+- Product currently offered as a free browser tool. Use the planner's Print / Save as PDF button to save a local copy.
+- A daily scheduled workflow at `.github/workflows/product-link-health.yml` checks the homepage, planner and share kit for HTTP 200 and required page text. It runs after pushes and daily; check Actions for its real result.
+- Not yet connected: payment provider, customer order database, automatic email delivery, or scheduled Instagram post. Metricool scheduling needs a publicly accessible image/video URL and any required account approval; do not treat draft promotional copy as a scheduled post.
+
 ## What this does — and does not do
 
 - These workflows run on GitHub-hosted runners; they do not keep an always-on server running continuously.
