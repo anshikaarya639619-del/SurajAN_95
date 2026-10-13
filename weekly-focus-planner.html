@@ -15,7 +15,7 @@ header{max-width:900px;margin:auto;padding:28px 20px 18px;display:flex;justify-c
 @media(max-width:600px){.page{padding:22px;min-height:850px}.page h1{font-size:35px}.grid3{grid-template-columns:1fr}.foot{left:22px;right:22px}.week th,.week td{padding:5px;font-size:10px}.week td{height:65px}}
 @page{size:A4;margin:0}
 @media print{body{background:white;color:#111}header,.actions,.note{display:none!important}.book{max-width:none;margin:0;padding:0}.page{width:210mm;height:297mm;min-height:0;margin:0;padding:16mm 15mm;box-shadow:none;break-after:page;page-break-after:always;overflow:hidden}.page:last-child{break-after:auto;page-break-after:auto}.foot{left:15mm;right:15mm;bottom:8mm}.page h1{font-size:40pt}.week td{height:17mm}.lines{height:40mm}}
-</style><link rel="stylesheet" href="stark-ui.css?v=20261013-reactor4">
+</style><link rel="stylesheet" href="stark-ui.css?v=20261013-silent5">
 </head>
 <body>
 <header><strong>SURAJAN_95 <span style="color:#bdf31d">/ PLANNER LAB</span></strong><a href="index.html">← EVERYTHING WORLD</a></header>
@@ -30,40 +30,5 @@ header{max-width:900px;margin:auto;padding:28px 20px 18px;display:flex;justify-c
 </main>
 <a href="index.html" style="position:fixed;right:12px;bottom:12px;background:#091525;border:1px solid #8ca9ce;border-radius:999px;padding:10px 13px;color:#d9f7ff;text-decoration:none;font-size:11px;letter-spacing:.12em">SURAJAN_95</a>
 
-
-<script id="stark-interaction-engine">
-(()=> {
- let soundOn=true,ctx=null,last=0;
- const getCtx=()=>{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;if(!ctx)ctx=new AC();if(ctx.state==="suspended")ctx.resume();return ctx};
- const sound=(kind="tap")=>{
-  if(!soundOn)return;const now=performance.now();if(now-last<48)return;last=now;
-  try{
-   const c=getCtx();if(!c)return;const t=c.currentTime;
-   const presets={tap:[620,880,.052,.022],nav:[440,660,.085,.025],toggle:[520,1040,.11,.028],submit:[390,780,.12,.03],check:[760,980,.045,.018]};
-   const p=presets[kind]||presets.tap;
-   const o=c.createOscillator(),g=c.createGain();o.type=kind==="nav"?"triangle":"sine";
-   o.frequency.setValueAtTime(p[0],t);o.frequency.exponentialRampToValueAtTime(p[1],t+p[2]*.72);
-   g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(p[3],t+.006);g.gain.exponentialRampToValueAtTime(.0001,t+p[2]);
-   o.connect(g);g.connect(c.destination);o.start(t);o.stop(t+p[2]+.01);
-   if(kind==="submit"){const o2=c.createOscillator(),g2=c.createGain();o2.type="sine";o2.frequency.setValueAtTime(980,t+.055);g2.gain.setValueAtTime(.0001,t+.055);g2.gain.exponentialRampToValueAtTime(.014,t+.065);g2.gain.exponentialRampToValueAtTime(.0001,t+.16);o2.connect(g2);g2.connect(c.destination);o2.start(t+.055);o2.stop(t+.17)}
-  }catch(e){}
- };
- const mount=()=>{
-  if(document.querySelector(".stark-sound-toggle"))return;
-  const b=document.createElement("button");b.type="button";b.className="stark-sound-toggle";b.setAttribute("aria-pressed","true");b.setAttribute("aria-label","Toggle interface sounds");
-  b.innerHTML='<span class="sound-dot"></span><span class="sound-label">SOUND ON</span>';
-  b.addEventListener("click",()=>{soundOn=!soundOn;b.setAttribute("aria-pressed",String(soundOn));b.querySelector(".sound-label").textContent=soundOn?"SOUND ON":"SOUND OFF";if(soundOn)sound("toggle")});
-  document.body.appendChild(b);
-  if(!document.querySelector(".stark-hud-flash")){const f=document.createElement("div");f.className="stark-hud-flash";f.setAttribute("aria-hidden","true");document.body.appendChild(f)}
- };
- document.addEventListener("pointerdown",e=>{
-  const el=e.target.closest("a,button,[role=button],input[type=submit],input[type=button],summary,.check,[data-sound]");
-  if(!el||el.classList.contains("stark-sound-toggle"))return;
-  sound(el.matches("a")?"nav":el.matches('input[type=submit]')?"submit":el.matches(".check")?"check":"tap");
-  const f=document.querySelector(".stark-hud-flash");if(f){f.classList.remove("active");void f.offsetWidth;f.classList.add("active")}
- },{passive:true});
- if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",mount,{once:true});else mount();
-})();
-</script>
 
 </body></html>
