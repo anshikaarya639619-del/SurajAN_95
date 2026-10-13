@@ -1,0 +1,107 @@
+name: EVERYTHING WORLD — Build, Health & GitHub Pages Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: everything-world-pages
+  cancel-in-progress: true
+
+jobs:
+  build-validation:
+    name: EVERYTHING WORLD — Build Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Validate required site files
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          required = [
+              "index.html",
+              "dashboard.html",
+              "education.html",
+              "technology.html",
+              "tools.html",
+              "404.html",
+              "stark-ui.css",
+          ]
+          missing = [p for p in required if not Path(p).is_file()]
+          if missing:
+              raise SystemExit("Missing required files: " + ", ".join(missing))
+          for p in Path(".").glob("*.html"):
+              text = p.read_text(encoding="utf-8")
+              if "<html" not in text.lower() or "</html>" not in text.lower():
+                  raise SystemExit(f"Invalid HTML document structure: {p}")
+          print("Build validation passed.")
+          PY
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  site-health:
+    name: EVERYTHING WORLD — Site Health Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Check local HTML asset references
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import urlparse, unquote
+          root = Path(".").resolve()
+          errors = []
+          class RefParser(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.refs = []
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  for key in ("href", "src"):
+                      value = attrs.get(key, "").strip()
+                      if value:
+                          self.refs.append(value)
+          for page in Path(".").glob("*.html"):
+              parser = RefParser()
+              parser.feed(page.read_text(encoding="utf-8"))
+              for ref in parser.refs:
+                  if ref.startswith(("#", "mailto:", "tel:", "javascript:", "data:")):
+                      continue
+                  parsed = urlparse(ref)
+                  if parsed.scheme or parsed.netloc:
+                      continue
+                  target = (page.parent / unquote(parsed.path)).resolve() if parsed.path else page.resolve()
+                  if not str(target).startswith(str(root)):
+                      errors.append(f"{page}: path escapes site root: {ref}")
+                  elif parsed.path and not target.exists():
+                      errors.append(f"{page}: missing local reference: {ref}")
+          if errors:
+              print("\n".join(errors))
+              raise SystemExit(f"Site health failed with {len(errors)} broken local reference(s).")
+          print("Site health passed: local HTML references resolve.")
+          PY
+
+  deploy:
+    name: Deploy EVERYTHING WORLD to GitHub Pages
+    needs: [build-validation, site-health]
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
