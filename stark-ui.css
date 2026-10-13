@@ -766,3 +766,51 @@ body hr,body .divider{border-color:rgba(255,255,255,.09)!important}
  body :is(.panel,.card,.tile,.metric,.section,.tool-card,.feature,.planner-card){border-radius:15px!important}
  body h1{font-size:clamp(2.4rem,12vw,4rem)!important}
 }
+
+
+/* TOTAL IDENTITY CHANGE — IVORY / COBALT / EDITORIAL SANS */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{
+ color-scheme:light!important;
+ --ink:#14213d!important;--text:#14213d!important;--dim:#64748b!important;--muted:#64748b!important;
+ --accent:#3157e8!important;--red:#3157e8!important;--lime:#3157e8!important;--cyan:#3157e8!important;--gold:#3157e8!important;
+ --edge:#dbe3f2!important;--line:#dbe3f2!important;--panel:#ffffff!important;--card:#ffffff!important;--bg:#f4f6fb!important;
+}
+html,body,body.home-command,body.dashboard,body.planner-page{
+ background:#f4f6fb!important;color:#14213d!important;font-family:'DM Sans',sans-serif!important;
+}
+body{background-image:radial-gradient(ellipse at 10% 0%,rgba(49,87,232,.08),transparent 35%)!important}
+body::before,body::after{display:none!important}
+body :is(header,nav,aside,.topbar,.navbar,.sidebar,.rail,.rail-head,.rail-foot,.nav-shell){
+ background:#f4f6fb!important;border-color:#e0e6f1!important;backdrop-filter:none!important;
+}
+body :is(.panel,.card,.tile,.metric,.metric-card,.stat-card,.step,.book,.section,.welcome,.hero-visual,.rail-foot,.action-secondary,.orbit-label,.tool-card,.feature,.planner-card,.content-card,.glass,.widget,.module,.surface,.tool,.resource-card,.link-card,.dashboard-card){
+ background:#fff!important;border:1px solid #e0e6f1!important;color:#14213d!important;
+ box-shadow:0 8px 28px rgba(22,37,76,.055)!important;border-radius:20px!important;
+}
+body :is(.panel,.card,.tile,.metric,.metric-card,.stat-card,.step,.book,.section,.welcome,.hero-visual,.tool-card,.feature,.planner-card,.content-card,.widget,.module,.surface,.tool,.resource-card,.link-card,.dashboard-card):hover{
+ transform:translateY(-2px)!important;border-color:#b8c7ff!important;box-shadow:0 16px 38px rgba(49,87,232,.1)!important;
+}
+body :is(h1,h2,h3,h4,.hero-title,.brand,.logo,.page-title){font-family:'Space Grotesk',sans-serif!important;color:#14213d!important;letter-spacing:-.045em!important}
+body h1{font-weight:700!important;line-height:1.02!important}
+body :is(.lime,.yellow,.gold,.amber,.orange,.highlight,.accent,.text-lime,.text-yellow,.status,.status-good,.hero h1 span,.eyebrow,.kicker,.brandicon){
+ color:#3157e8!important;-webkit-text-fill-color:#3157e8!important;
+}
+body :is(button,.btn,.button,.action-primary,.btn-primary,.primary,.submit,[type=submit]){
+ background:#3157e8!important;color:#fff!important;border:1px solid #3157e8!important;
+ border-radius:999px!important;box-shadow:0 7px 18px rgba(49,87,232,.18)!important;font-weight:700!important;
+}
+body :is(.action-secondary,.btn-secondary,.secondary){background:#fff!important;color:#3157e8!important;border:1px solid #dbe3f2!important;border-radius:999px!important}
+body a{color:#3157e8!important}body a:hover{color:#14213d!important}
+body p,body li,body label,body small,body .sub,body .lead,body .note,body .dim{color:#64748b!important}
+body input,body textarea,body select{background:#fff!important;color:#14213d!important;border:1px solid #d5ddec!important;border-radius:12px!important}
+body .brandicon{background:#3157e8!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border-radius:12px!important}
+body :is(.rail-link,.nav-link,.tab,.chip){border-radius:12px!important}
+body :is(.rail-link.active,.nav-link.active,.tab.active,.chip.active){background:#e9edff!important;border-color:#cbd5ff!important;color:#2445c5!important;box-shadow:none!important}
+body hr,body .divider{border-color:#e0e6f1!important}
+::selection{background:#3157e8!important;color:#fff!important}
+@media(max-width:700px){
+ body :is(.shell,.container,.wrap){width:calc(100% - 24px)!important}
+ body :is(.panel,.card,.tile,.metric,.section,.tool-card,.feature,.planner-card){border-radius:16px!important}
+ body h1{font-size:clamp(2.4rem,12vw,4rem)!important}
+}
