@@ -63,9 +63,18 @@ for page in HTML_FILES:
         if not href or href.startswith(("#", "mailto:", "tel:", "javascript:", "https://", "http://", "//")):
             continue
         target_part = href.split("?", 1)[0].split("#", 1)[0]
+        # GitHub Pages project sites are hosted below /<repository-name>/.
+        # Map that public URL prefix back to this repository's root.
+        if target_part.startswith("/SurajAN_95/"):
+            target_part = target_part[len("/SurajAN_95/"):]
+        elif target_part == "/SurajAN_95":
+            target_part = ""
+        elif target_part.startswith("/"):
+            target_part = target_part.lstrip("/")
         if not target_part:
-            continue
-        target = (page.parent / target_part).resolve()
+            target = ROOT
+        else:
+            target = (ROOT / target_part).resolve()
         checked_links += 1
         if not target.exists():
             errors.append(f"{page.name}: local link target missing: {href}")
