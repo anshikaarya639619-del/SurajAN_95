@@ -53,6 +53,65 @@
  50%{filter:brightness(1.45) drop-shadow(0 0 5px var(--sa-glow));}
 }
 @media(prefers-reduced-motion:reduce){.sa-signature .sa-name .sa-char{animation:none!important}}
+
+/* EVERYTHING WORLD / SurajAN_95 — cinematic precision typography */
+:root{
+ --ew-type-ice:#f8fbff;
+ --ew-type-blue:#9cc8ff;
+ --ew-type-violet:#c5a8ff;
+ --ew-type-shadow:rgba(1,5,15,.78);
+}
+body{
+ -webkit-font-smoothing:antialiased;
+ -moz-osx-font-smoothing:grayscale;
+ text-rendering:optimizeLegibility;
+}
+h1,h2,h3,h4,.hero h1,.panel h2{
+ font-weight:850;
+ color:var(--ew-type-ice);
+ text-wrap:balance;
+}
+h1,.hero h1{
+ letter-spacing:-.055em;
+ text-shadow:0 2px 0 rgba(255,255,255,.035),0 8px 32px rgba(67,130,255,.12);
+}
+h2,.panel h2{letter-spacing:-.035em}
+.brand,.nav .brand,.eyebrow{
+ font-weight:900;
+ text-rendering:geometricPrecision;
+}
+.sa-signature{
+ padding:10px 15px!important;
+ border-color:rgba(193,214,255,.55)!important;
+ box-shadow:0 0 0 1px rgba(255,255,255,.075),0 8px 28px rgba(0,0,0,.42),0 0 26px rgba(78,143,255,.24),inset 0 1px 0 rgba(255,255,255,.12)!important;
+}
+.sa-signature .sa-name{
+ font-size:11px!important;
+ font-weight:1000!important;
+ letter-spacing:.12em!important;
+ line-height:1!important;
+ filter:drop-shadow(0 1px 0 rgba(255,255,255,.12));
+}
+.sa-signature .sa-char{
+ font-weight:1000!important;
+ -webkit-text-stroke:.24px rgba(255,255,255,.32);
+ text-shadow:0 0 7px var(--sa-glow),0 0 14px color-mix(in srgb,var(--sa-glow) 55%,transparent),0 1px 0 rgba(255,255,255,.32);
+ animation:sa-letter-shimmer 2.9s ease-in-out infinite!important;
+}
+.sa-signature .sa-dot{
+ width:7px!important;height:7px!important;
+ box-shadow:0 0 9px #76b8ff,0 0 18px #a58cff,0 0 26px rgba(118,184,255,.45)!important;
+}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+ outline:2px solid #a8caff;outline-offset:3px;
+}
+@media(max-width:480px){
+ .sa-signature{padding:9px 12px!important}
+ .sa-signature .sa-name{font-size:10px!important;letter-spacing:.1em!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .sa-signature .sa-char{animation:none!important}
+}
 </style>
 </head>
 <body>
