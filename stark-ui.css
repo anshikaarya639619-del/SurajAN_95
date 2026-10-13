@@ -1,0 +1,29 @@
+/* JARVIS / TONY STARK — complete cinematic system skin */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{color-scheme:dark;--bg:#06090f;--panel:#101722;--panel2:#151f2c;--text:#eaf4ff;--muted:#91a4b9;--cyan:#45e5ff;--cyan2:#8bf1ff;--line:rgba(89,207,245,.22);--shadow:0 22px 70px rgba(0,0,0,.42)}
+html{background:var(--bg)!important;color-scheme:dark!important;scroll-behavior:smooth}
+body,body.home-command,body.dashboard,body.planner-page{background:radial-gradient(ellipse at 50% -15%,rgba(37,123,170,.2),transparent 48%),var(--bg)!important;color:var(--text)!important;font-family:Inter,system-ui,sans-serif!important}
+body:before{background:radial-gradient(circle at 12% 18%,rgba(69,229,255,.08),transparent 25%),radial-gradient(circle at 88% 58%,rgba(37,115,188,.09),transparent 30%)!important;opacity:1!important}
+body:after{border-color:rgba(69,229,255,.07)!important}
+body :is(header,nav,aside,.topbar,.navbar,.sidebar,.rail,.rail-head,.rail-foot,.nav-shell,.top){background:rgba(6,10,16,.88)!important;border-color:var(--line)!important;backdrop-filter:blur(24px)!important}
+body :is(.shell,.container,.wrap,.main,.main-content,.page,.content-wrap){max-width:1360px}
+body :is(.panel,.card,.tile,.metric,.metric-card,.stat-card,.step,.book,.section,.welcome,.hero-visual,.rail-foot,.action-secondary,.orbit-label,.tool-card,.feature,.planner-card,.content-card,.glass,.widget,.module,.surface,.tool,.resource-card,.link-card,.dashboard-card,.poster,.mini div){background:linear-gradient(145deg,rgba(20,30,43,.97),rgba(10,16,25,.98))!important;border:1px solid var(--line)!important;color:var(--text)!important;box-shadow:var(--shadow)!important;border-radius:18px!important}
+body :is(.panel,.card,.tile,.metric,.metric-card,.stat-card,.step,.book,.section,.welcome,.hero-visual,.tool-card,.feature,.planner-card,.content-card,.widget,.module,.surface,.tool,.resource-card,.link-card,.dashboard-card){transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease!important}
+body :is(.panel,.card,.tile,.metric,.metric-card,.stat-card,.step,.book,.section,.welcome,.hero-visual,.tool-card,.feature,.planner-card,.content-card,.widget,.module,.surface,.tool,.resource-card,.link-card,.dashboard-card):hover{transform:translateY(-3px)!important;border-color:rgba(69,229,255,.55)!important;box-shadow:0 24px 70px rgba(0,0,0,.5),0 0 24px rgba(69,229,255,.06)!important}
+body :is(h1,h2,h3,h4,h5,h6,.hero-title,.brand,.brandmark,.logo,.page-title){font-family:Orbitron,Inter,sans-serif!important;color:#edfaff!important;letter-spacing:-.035em!important}
+body h1{font-weight:700!important;line-height:1.04!important}
+body :is(.lime,.yellow,.gold,.amber,.orange,.highlight,.accent,.text-lime,.text-yellow,.status,.status-good,.hero h1 span,.eyebrow,.kicker){color:var(--cyan)!important;-webkit-text-fill-color:var(--cyan)!important}
+body :is(button,.btn,.button,.action-primary,.btn-primary,.primary,.submit,[type=submit]){background:linear-gradient(135deg,#8bf1ff,#35bce9)!important;color:#031018!important;border:1px solid #a8f5ff!important;border-radius:10px!important;box-shadow:0 0 24px rgba(69,229,255,.12)!important;font-weight:800!important}
+body :is(.action-secondary,.btn-secondary,.secondary){background:#121d2a!important;color:var(--text)!important;border:1px solid var(--line)!important;border-radius:10px!important}
+body a{color:#78eaff!important;text-underline-offset:4px}body a:hover{color:#fff!important}
+body p,body li,body label,body small,body .sub,body .lead,body .note,body .dim{color:#a9bacb!important}
+body input,body textarea,body select{background:#080e17!important;color:var(--text)!important;border:1px solid var(--line)!important;border-radius:10px!important}
+body .brandicon{background:linear-gradient(135deg,#8bf1ff,#279acb)!important;color:#031018!important;-webkit-text-fill-color:#031018!important;border-radius:12px!important;box-shadow:0 0 26px rgba(69,229,255,.2)!important}
+body :is(.rail-link,.nav-link,.tab,.chip){border-radius:10px!important}
+body :is(.rail-link.active,.nav-link.active,.tab.active,.chip.active){background:rgba(69,229,255,.1)!important;border-color:rgba(69,229,255,.35)!important;color:#c9faff!important;box-shadow:inset 3px 0 #45e5ff!important}
+body .hero-visual{background:radial-gradient(ellipse at 50% 42%,rgba(69,229,255,.15),transparent 45%),linear-gradient(145deg,#152232,#070b11)!important}
+body .orbit-label{background:rgba(7,15,23,.94)!important;border-color:rgba(69,229,255,.35)!important;color:#a6f4ff!important}
+body hr,body .divider{border-color:var(--line)!important}
+::selection{background:var(--cyan)!important;color:#031018!important}
+@media(max-width:700px){body :is(.shell,.container,.wrap){width:calc(100% - 24px)!important}body :is(.panel,.card,.tile,.metric,.section,.tool-card,.feature,.planner-card){border-radius:14px!important}body h1{font-size:clamp(2.2rem,11vw,3.8rem)!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
