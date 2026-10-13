@@ -169,7 +169,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opac
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
 </style>
-  <link rel="stylesheet" href="stark-ui.css?v=20261013-one-system">
+  <link rel="stylesheet" href="stark-ui.css?v=20261013-mk2">
 </head>
 <body>
 <header class="wrap nav"><a class="brand" href="index.html"><span class="brand-mark">✳</span> SURAJ<span>AN_95</span> <small> / COMMAND CENTER</small></a><a class="nav-back" href="index.html">← MAIN UNIVERSE</a></header>
@@ -203,4 +203,39 @@ document.getElementById('year').textContent=new Date().getFullYear();render();
 </script>
 
 <a class="sa-signature" href="/SurajAN_95/" aria-label="SurajAN_95 — website signature watermark"><span class="sa-dot" aria-hidden="true"></span><span class="sa-name" aria-label="SurajAN_95"><span class="sa-char" style="--sa-top:#ffffff;--sa-bottom:#a9c7ff;--sa-glow:#9fc6ff;--sa-delay:0.00s" aria-hidden="true">S</span><span class="sa-char" style="--sa-top:#8cecff;--sa-bottom:#237eff;--sa-glow:#57cfff;--sa-delay:0.16s" aria-hidden="true">u</span><span class="sa-char" style="--sa-top:#d7b8ff;--sa-bottom:#8052ff;--sa-glow:#a875ff;--sa-delay:0.32s" aria-hidden="true">r</span><span class="sa-char" style="--sa-top:#a4ffe7;--sa-bottom:#12bda7;--sa-glow:#6dffe0;--sa-delay:0.48s" aria-hidden="true">a</span><span class="sa-char" style="--sa-top:#ffe7a3;--sa-bottom:#ff9e36;--sa-glow:#ffc76d;--sa-delay:0.64s" aria-hidden="true">j</span><span class="sa-char" style="--sa-top:#ffb7d9;--sa-bottom:#ff4fa2;--sa-glow:#ff81c4;--sa-delay:0.80s" aria-hidden="true">A</span><span class="sa-char" style="--sa-top:#c9f7ff;--sa-bottom:#40b6ff;--sa-glow:#73d6ff;--sa-delay:0.96s" aria-hidden="true">N</span><span class="sa-char" style="--sa-top:#e3c9ff;--sa-bottom:#9c64ff;--sa-glow:#bd8dff;--sa-delay:1.12s" aria-hidden="true">_</span><span class="sa-char" style="--sa-top:#fff2a6;--sa-bottom:#ffcc33;--sa-glow:#ffdc61;--sa-delay:1.28s" aria-hidden="true">9</span><span class="sa-char" style="--sa-top:#b7ffd5;--sa-bottom:#32d583;--sa-glow:#66f2ad;--sa-delay:1.44s" aria-hidden="true">5</span></span></a>
+
+<script id="stark-interaction-engine">
+(()=> {
+ let soundOn=true,ctx=null,last=0;
+ const boot=()=>{const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return null;if(!ctx)ctx=new AC();if(ctx.state==="suspended")ctx.resume();return ctx};
+ const tick=(kind="tap")=>{
+  if(!soundOn)return;const now=performance.now();if(now-last<55)return;last=now;
+  try{const c=boot();if(!c)return;const t=c.currentTime;
+   const osc=c.createOscillator(),gain=c.createGain();
+   osc.type="sine";osc.frequency.setValueAtTime(kind==="nav"?640:kind==="toggle"?760:520,t);
+   osc.frequency.exponentialRampToValueAtTime(kind==="nav"?920:kind==="toggle"?1120:700,t+.045);
+   gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(.032,t+.006);gain.gain.exponentialRampToValueAtTime(.0001,t+.075);
+   osc.connect(gain);gain.connect(c.destination);osc.start(t);osc.stop(t+.08);
+   if(kind==="toggle"){const o=c.createOscillator(),g=c.createGain();o.type="sine";o.frequency.setValueAtTime(soundOn?980:360,t+.045);g.gain.setValueAtTime(.0001,t+.045);g.gain.exponentialRampToValueAtTime(.018,t+.052);g.gain.exponentialRampToValueAtTime(.0001,t+.12);o.connect(g);g.connect(c.destination);o.start(t+.045);o.stop(t+.13)}
+  }catch(e){}
+ };
+ const styleButton=()=> {
+  if(document.querySelector(".stark-sound-toggle"))return;
+  const b=document.createElement("button");b.type="button";b.className="stark-sound-toggle";b.setAttribute("aria-pressed","true");b.setAttribute("aria-label","Toggle interface sounds");
+  b.innerHTML='<span class="sound-dot"></span><span class="sound-label">SOUND ON</span>';
+  b.addEventListener("click",()=>{soundOn=!soundOn;b.setAttribute("aria-pressed",String(soundOn));b.querySelector(".sound-label").textContent=soundOn?"SOUND ON":"SOUND OFF";if(soundOn)tick("toggle");});
+  document.body.appendChild(b);
+  const flash=document.createElement("div");flash.className="stark-hud-flash";flash.setAttribute("aria-hidden","true");document.body.appendChild(flash);
+ };
+ document.addEventListener("pointerdown",e=>{
+  const target=e.target.closest("a,button,[role=button],input[type=submit],input[type=button],summary,.check,[data-sound]");
+  if(!target||target.classList.contains("stark-sound-toggle"))return;
+  tick(target.matches("a")?"nav":"tap");
+  const flash=document.querySelector(".stark-hud-flash");if(flash){flash.classList.remove("active");void flash.offsetWidth;flash.classList.add("active")}
+ },{passive:true});
+ document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("a,button,[role=button],summary"))tick("tap")});
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",styleButton,{once:true});else styleButton();
+})();
+</script>
+
 </body></html>
