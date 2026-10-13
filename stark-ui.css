@@ -705,3 +705,64 @@ body a:hover{color:#fff!important}
 body p,body li,body label,body small,body .sub,body .lead,body .note,body .dim{color:#b9b1b0!important}
 body input,body textarea,body select{background:#0a0a0b!important;color:#f5f3f2!important;border:1px solid rgba(255,48,59,.35)!important}
 body .brandicon{background:linear-gradient(145deg,#ff646b,#c90f20)!important;color:#fff!important}
+
+
+/* EVERYTHING WORLD — TOTAL VISUAL REDESIGN / 2026-10 */
+:root{
+ color-scheme:dark;
+ --ink:#f5f5f7;--text:#f5f5f7;--dim:#92929b;--muted:#92929b;
+ --accent:#ff3b45;--red:#ff3b45;--lime:#ff3b45;--cyan:#ff3b45;--gold:#ff3b45;
+ --edge:rgba(255,59,69,.22);--line:rgba(255,59,69,.18);
+ --panel:#111114;--card:#111114;--bg:#08080a;
+}
+html{background:#08080a!important;color-scheme:dark!important;scroll-behavior:smooth}
+body,body.home-command,body.dashboard,body.planner-page{
+ background:
+ radial-gradient(ellipse at 8% 0%,rgba(255,59,69,.12),transparent 34%),
+ radial-gradient(ellipse at 92% 20%,rgba(255,59,69,.06),transparent 28%),
+ #08080a!important;color:#f5f5f7!important;
+ font-family:Inter,Manrope,system-ui,sans-serif!important;
+}
+body::before{display:none!important}
+body :is(header,nav,aside,.topbar,.navbar,.sidebar,.rail,.rail-head,.rail-foot,.nav-shell){
+ background:rgba(8,8,10,.94)!important;border-color:rgba(255,255,255,.08)!important;
+ backdrop-filter:blur(18px)!important;
+}
+body :is(.shell,.container,.wrap,.main,.main-content,.page,.content-wrap){max-width:1240px}
+body :is(.panel,.card,.tile,.metric,.metric-card,.stat-card,.step,.book,.section,.welcome,.hero-visual,.rail-foot,.action-secondary,.orbit-label,.tool-card,.feature,.planner-card,.content-card,.glass,.widget,.module,.surface,.tool,.resource-card,.link-card,.dashboard-card){
+ background:linear-gradient(145deg,rgba(24,24,28,.98),rgba(14,14,17,.98))!important;
+ border:1px solid rgba(255,255,255,.09)!important;
+ color:#f5f5f7!important;box-shadow:0 18px 48px rgba(0,0,0,.24)!important;
+ border-radius:18px!important;
+}
+body :is(.panel,.card,.tile,.metric,.metric-card,.stat-card,.step,.book,.section,.welcome,.hero-visual,.tool-card,.feature,.planner-card,.content-card,.widget,.module,.surface,.tool,.resource-card,.link-card,.dashboard-card){
+ transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease!important;
+}
+body :is(.panel,.card,.tile,.metric,.metric-card,.stat-card,.step,.book,.section,.welcome,.hero-visual,.tool-card,.feature,.planner-card,.content-card,.widget,.module,.surface,.tool,.resource-card,.link-card,.dashboard-card):hover{
+ transform:translateY(-3px);border-color:rgba(255,59,69,.45)!important;box-shadow:0 20px 55px rgba(0,0,0,.35),0 0 28px rgba(255,59,69,.06)!important;
+}
+body :is(h1,h2,h3,h4,.hero-title,.brand,.logo,.page-title){color:#fafafa!important;letter-spacing:-.035em!important}
+body h1{font-weight:850!important;line-height:1.02!important}
+body :is(.lime,.yellow,.gold,.amber,.orange,.highlight,.accent,.text-lime,.text-yellow,.status,.status-good,.hero h1 span,.eyebrow,.kicker,.brandicon){
+ color:#ff4650!important;-webkit-text-fill-color:#ff4650!important;
+}
+body :is(button,.btn,.button,.action-primary,.btn-primary,.primary,.submit,[type=submit]){
+ background:linear-gradient(115deg,#ff4b55,#d91d2b)!important;color:#fff!important;
+ border:1px solid rgba(255,105,112,.72)!important;border-radius:999px!important;
+ box-shadow:0 8px 24px rgba(255,40,55,.18)!important;font-weight:750!important;
+}
+body :is(.action-secondary,.btn-secondary,.secondary){background:#17171b!important;color:#f5f5f7!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:999px!important}
+body a{color:#ff626b!important;text-underline-offset:4px}
+body a:hover{color:#fff!important}
+body p,body li,body label,body small,body .sub,body .lead,body .note,body .dim{color:#b7b7c0!important}
+body input,body textarea,body select{background:#0c0c0f!important;color:#f5f5f7!important;border:1px solid rgba(255,255,255,.15)!important;border-radius:12px!important}
+body .brandicon{background:linear-gradient(145deg,#ff5962,#b50f1d)!important;color:#fff!important}
+body :is(.rail-link,.nav-link,.tab,.chip){border-radius:999px!important}
+body :is(.rail-link.active,.nav-link.active,.tab.active,.chip.active){background:rgba(255,59,69,.12)!important;border-color:rgba(255,59,69,.3)!important;color:#fff!important}
+body hr,body .divider{border-color:rgba(255,255,255,.09)!important}
+::selection{background:#ff3b45;color:white}
+@media(max-width:700px){
+ body :is(.shell,.container,.wrap){width:calc(100% - 24px)!important}
+ body :is(.panel,.card,.tile,.metric,.section,.tool-card,.feature,.planner-card){border-radius:15px!important}
+ body h1{font-size:clamp(2.4rem,12vw,4rem)!important}
+}
