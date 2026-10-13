@@ -11,7 +11,7 @@
 <meta property="og:description" content="One interface. Infinite directions. Explore tools, knowledge and technology.">
 <meta property="og:type" content="website">
 <title>EVERYTHING WORLD — Curiosity Engine</title>
-<link rel="stylesheet" href="stark-ui.css?v=20261013h">
+<link rel="stylesheet" href="stark-ui.css?v=20261013-totalreset">
 <style>
 :root{--ink:#eaf5ff;--dim:#91a7c0;--cyan:#61e8ff;--edge:rgba(116,207,255,.18);--glass:rgba(8,17,31,.78)}
 *{box-sizing:border-box}
@@ -267,12 +267,93 @@ body.home-command footer{border-top-color:rgba(127,231,255,.32)!important}
  body.home-command .rail-link,body.home-command .rail-foot,body.home-command .metric,body.home-command .module,body.home-command .bottom-band{background:rgba(8,22,39,.27)!important}
 }
 
+
+/* TOTAL VISUAL RESET — OBSIDIAN / ACID SIGNAL */
+:root{--acid:#d6ff38;--acid2:#a8ff00;--violet:#a88bff;--paper:#f2f3ed;--soft:#a3a99d;--edge:rgba(214,255,56,.2)}
+html{background:#090b09!important;scroll-behavior:smooth}
+body.home-command{background:#090b09!important;color:var(--paper)!important;background-image:radial-gradient(ellipse at 76% 15%,rgba(168,139,255,.12),transparent 34%),radial-gradient(ellipse at 15% 46%,rgba(214,255,56,.075),transparent 34%),linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px)!important;background-size:auto,auto,36px 36px,36px 36px!important;background-attachment:fixed!important}
+body.home-command:before{opacity:.18!important;background:repeating-linear-gradient(to bottom,rgba(214,255,56,.035) 0 1px,transparent 1px 5px)!important}
+body.home-command .shell{width:min(1500px,100% - 52px)!important}
+body.home-command .topbar{height:86px;border-bottom:1px solid rgba(255,255,255,.13)!important;background:rgba(10,12,10,.48)!important;backdrop-filter:blur(24px)!important;-webkit-backdrop-filter:blur(24px)!important}
+body.home-command .brandmark{font-size:12px;letter-spacing:.16em;color:#f7f8f2}
+body.home-command .brandmark small{color:var(--acid);font-size:8px;letter-spacing:.24em}
+body.home-command .brandicon{background:var(--acid)!important;color:#10120b!important;border-radius:4px!important;box-shadow:0 0 28px rgba(214,255,56,.25)!important;font-size:23px!important}
+body.home-command .live{border:1px solid rgba(214,255,56,.32)!important;background:rgba(214,255,56,.07)!important;color:var(--acid)!important;border-radius:3px!important}
+body.home-command .live i{background:var(--acid)!important;box-shadow:0 0 14px var(--acid)!important}
+body.home-command .layout{grid-template-columns:220px minmax(0,1fr)!important;gap:34px!important;padding-top:28px!important}
+body.home-command .rail{border-right:1px solid rgba(255,255,255,.13)!important}
+body.home-command .rail-label{color:#747c70!important;font-size:9px!important;letter-spacing:.2em!important}
+body.home-command .rail-link{border:1px solid transparent!important;border-radius:3px!important;background:transparent!important;color:#a7ada2!important;padding:13px 12px!important}
+body.home-command .rail-link span{color:var(--acid)!important}
+body.home-command .rail-link.active,body.home-command .rail-link:hover{color:#fff!important;background:rgba(214,255,56,.075)!important;border-color:rgba(214,255,56,.25)!important;box-shadow:inset 3px 0 var(--acid)!important}
+body.home-command .rail-foot{background:linear-gradient(135deg,rgba(214,255,56,.08),rgba(255,255,255,.018))!important;border:1px solid rgba(214,255,56,.2)!important;border-radius:4px!important}
+body.home-command .rail-foot strong{color:#f7f8f2!important}
+body.home-command .rail-foot p{color:#969e91!important}
+body.home-command .breadcrumb{color:#7f887c!important;letter-spacing:.22em!important}
+body.home-command .breadcrumb b{color:var(--acid)!important}
+body.home-command .hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr)!important;gap:30px!important}
+body.home-command .hero-copy{padding:34px 0 42px!important}
+body.home-command .kicker{border:1px solid rgba(214,255,56,.35)!important;background:rgba(214,255,56,.055)!important;color:var(--acid)!important;border-radius:3px!important;font-size:9px!important;letter-spacing:.16em!important}
+body.home-command .kicker i{background:var(--acid)!important;box-shadow:0 0 12px var(--acid)!important}
+body.home-command .hero h1{font-size:clamp(52px,7.1vw,112px)!important;line-height:.88!important;letter-spacing:-.09em!important;font-weight:950!important;margin:28px 0 24px!important}
+body.home-command .hero h1 span{background:linear-gradient(100deg,#d6ff38 0%,#f4ffb5 44%,#a88bff 100%)!important;background-clip:text!important;-webkit-background-clip:text!important;animation:none!important}
+body.home-command .hero-copy>p{font-size:15px!important;color:#a6ada0!important;line-height:1.8!important;max-width:500px!important}
+body.home-command .action-primary{background:var(--acid)!important;color:#11130a!important;border:1px solid var(--acid)!important;border-radius:3px!important;box-shadow:0 0 28px rgba(214,255,56,.12)!important;font-weight:950!important}
+body.home-command .action-primary:hover{background:#edff9c!important;box-shadow:0 0 38px rgba(214,255,56,.22)!important}
+body.home-command .action-secondary{background:rgba(255,255,255,.035)!important;color:#eff2e9!important;border:1px solid rgba(255,255,255,.22)!important;border-radius:3px!important}
+body.home-command .hero-visual{min-height:460px!important;overflow:hidden!important;border:1px solid rgba(214,255,56,.38)!important;border-radius:4px!important;background:radial-gradient(ellipse at 52% 46%,rgba(214,255,56,.12),transparent 28%),radial-gradient(ellipse at 55% 52%,rgba(168,139,255,.10),transparent 57%),rgba(12,15,11,.38)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;box-shadow:inset 0 0 0 8px rgba(255,255,255,.015),inset 0 0 90px rgba(214,255,56,.035),0 25px 70px rgba(0,0,0,.24)!important}
+body.home-command .hero-visual:before{inset:14px!important;border:1px solid rgba(255,255,255,.12)!important;background:linear-gradient(135deg,rgba(255,255,255,.06),transparent 28% 70%,rgba(214,255,56,.05))!important}
+body.home-command .hero-visual:after{width:clamp(230px,30vw,390px)!important;border-color:rgba(214,255,56,.48)!important;box-shadow:0 0 0 14px rgba(214,255,56,.04),0 0 0 34px rgba(168,139,255,.035),0 0 0 58px rgba(255,255,255,.018)!important;background:repeating-conic-gradient(from 12deg,transparent 0 9deg,rgba(214,255,56,.36) 9.3deg 9.7deg,transparent 10deg 22deg)!important}
+body.home-command .core{width:min(72%,310px)!important;background:radial-gradient(circle at 50% 50%,#fff 0 1%,#eaffab 2% 3%,#d6ff38 4%,#202b0a 12%,transparent 13% 22%,rgba(214,255,56,.2) 23% 24%,transparent 25% 35%,rgba(214,255,56,.95) 36% 36.6%,transparent 37.2% 48%,rgba(168,139,255,.68) 49% 49.7%,transparent 50.5% 60%,rgba(214,255,56,.85) 61% 61.5%,transparent 62%)!important;filter:drop-shadow(0 0 25px rgba(214,255,56,.48)) drop-shadow(0 0 75px rgba(168,139,255,.15))!important}
+body.home-command .core:before{border-color:rgba(214,255,56,.72)!important}
+body.home-command .core:after{border-color:rgba(168,139,255,.8)!important}
+body.home-command .visual-top,body.home-command .visual-bottom{color:#9ba492!important;font-size:8px!important;letter-spacing:.17em!important}
+body.home-command .visual-top b{color:var(--acid)!important}
+body.home-command .orbit-label{border:1px solid rgba(214,255,56,.48)!important;background:rgba(8,11,7,.42)!important;color:var(--acid)!important;backdrop-filter:blur(15px)!important;-webkit-backdrop-filter:blur(15px)!important;border-radius:3px!important;box-shadow:0 0 24px rgba(214,255,56,.06)!important}
+body.home-command .orbit-label strong{color:#f7f8f2!important}
+body.home-command .metrics{gap:12px!important;margin:26px 0 54px!important}
+body.home-command .metric{background:rgba(255,255,255,.025)!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:4px!important;backdrop-filter:blur(16px)!important;-webkit-backdrop-filter:blur(16px)!important;box-shadow:inset 0 1px rgba(255,255,255,.06)!important}
+body.home-command .metric:before{background:linear-gradient(90deg,transparent,var(--acid),var(--violet),transparent)!important}
+body.home-command .metric small{color:#8d9687!important}
+body.home-command .metric strong{color:#f3f5ed!important;font-size:24px!important}
+body.home-command .metric em{color:var(--acid)!important}
+body.home-command .section-head{border-bottom:1px solid rgba(255,255,255,.14)!important;padding-bottom:18px!important}
+body.home-command .section-head small{color:var(--acid)!important}
+body.home-command .section-head h2{color:#f3f5ed!important;font-size:clamp(25px,3.2vw,39px)!important;letter-spacing:-.065em!important}
+body.home-command .section-head p{color:#969f91!important}
+body.home-command .tool-grid{gap:12px!important}
+body.home-command .module{min-height:185px!important;padding:20px!important;background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012))!important;border:1px solid rgba(255,255,255,.14)!important;border-radius:4px!important;backdrop-filter:blur(15px)!important;-webkit-backdrop-filter:blur(15px)!important;box-shadow:inset 0 1px rgba(255,255,255,.055)!important}
+body.home-command .module:before{background:linear-gradient(180deg,var(--acid),transparent)!important;width:2px!important;opacity:.65!important}
+body.home-command .module:after{border-color:rgba(214,255,56,.18)!important;box-shadow:0 0 0 16px rgba(214,255,56,.025),0 0 0 32px rgba(168,139,255,.02)!important}
+body.home-command .module:hover{background:linear-gradient(145deg,rgba(214,255,56,.09),rgba(168,139,255,.035))!important;border-color:rgba(214,255,56,.55)!important;box-shadow:inset 0 1px rgba(255,255,255,.09),0 16px 38px rgba(0,0,0,.2)!important;transform:translateY(-4px)!important}
+body.home-command .mod-icon{color:var(--acid)!important;background:rgba(214,255,56,.07)!important;border:1px solid rgba(214,255,56,.25)!important;border-radius:3px!important}
+body.home-command .mod-tag{color:var(--acid)!important}
+body.home-command .module h3{color:#f5f7ef!important;font-size:16px!important}
+body.home-command .module p{color:#a1a99a!important}
+body.home-command .module .arrow{color:var(--acid)!important}
+body.home-command .searchbox input,body.home-command .searchbox select{background:rgba(255,255,255,.04)!important;color:#f5f7ef!important;border:1px solid rgba(255,255,255,.18)!important;border-radius:3px!important}
+body.home-command .searchbox input::placeholder{color:#8f988a!important}
+body.home-command .searchbox button{background:var(--acid)!important;color:#10120a!important;border:1px solid var(--acid)!important;border-radius:3px!important}
+body.home-command .bottom-band{background:linear-gradient(110deg,rgba(214,255,56,.08),rgba(255,255,255,.025) 55%,rgba(168,139,255,.07))!important;border:1px solid rgba(214,255,56,.25)!important;border-radius:4px!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important}
+body.home-command .bottom-band small{color:var(--acid)!important}
+body.home-command .bottom-band h2{color:#f5f7ef!important}
+body.home-command .bottom-band p{color:#a1a99a!important}
+body.home-command footer{border-top-color:rgba(255,255,255,.15)!important;color:#7e8779!important}
+body.home-command footer a:hover{color:var(--acid)!important}
+body.home-command .sa-signature{background:rgba(9,12,8,.52)!important;border:1px solid rgba(214,255,56,.58)!important;border-radius:3px!important;backdrop-filter:blur(20px) saturate(155%)!important;-webkit-backdrop-filter:blur(20px) saturate(155%)!important;box-shadow:inset 0 1px rgba(255,255,255,.12),0 0 26px rgba(214,255,56,.12)!important}
+body.home-command .sa-signature:before{color:var(--acid)!important}
+body.home-command .sa-dot{background:var(--acid)!important;box-shadow:0 0 12px var(--acid)!important}
+body.home-command .sa-char{text-shadow:0 0 8px var(--sa-glow),0 0 18px var(--sa-glow)!important}
+@media(max-width:980px){body.home-command .layout{grid-template-columns:1fr!important;gap:12px!important}body.home-command .rail{display:none!important}body.home-command .hero-grid{grid-template-columns:minmax(0,1fr) minmax(270px,.9fr)!important}}
+@media(max-width:680px){body.home-command .shell{width:calc(100% - 22px)!important}body.home-command .topbar{height:68px!important}body.home-command .layout{padding-top:8px!important}body.home-command .hero-grid{grid-template-columns:1fr!important;gap:14px!important}body.home-command .hero-copy{padding:20px 0 12px!important}body.home-command .hero h1{font-size:clamp(46px,12.4vw,72px)!important;line-height:.91!important;margin:22px 0 18px!important}body.home-command .hero-visual{min-height:320px!important}body.home-command .metrics{gap:7px!important;margin:18px 0 35px!important}body.home-command .metric{padding:12px 9px!important}body.home-command .metric strong{font-size:16px!important}body.home-command .metric small{font-size:7px!important;letter-spacing:.04em!important}body.home-command .metric em{font-size:9px!important}body.home-command .tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}body.home-command .module{padding:13px!important;min-height:170px!important}body.home-command .module h3{font-size:13px!important}body.home-command .module p{font-size:10px!important}body.home-command .topright .uptime{display:none!important}body.home-command .brandmark{font-size:10px!important;letter-spacing:.08em!important}body.home-command .brandmark small{font-size:7px!important}body.home-command .bottom-band{padding:20px!important}body.home-command .hero-visual:after{width:245px!important}body.home-command .sa-signature{right:8px!important;bottom:8px!important}}
+@media(prefers-reduced-motion:reduce){body.home-command .core,body.home-command .hero-visual:after{animation:none!important}}
+
 </style>
 </head>
 <body class="home-command">
 <div class="shell">
 <header class="topbar">
-<a class="brandmark" href="./" aria-label="Everything World home"><span class="brandicon">✳</span><span>EVERYTHING WORLD<small>THE CURIOSITY ENGINE</small></span></a>
+<a class="brandmark" href="./" aria-label="Everything World home"><span class="brandicon">✳</span><span>EVERYTHING WORLD<small>YOUR PERSONAL UNIVERSE</small></span></a>
 <div class="topright"><span class="uptime">INTERFACE 03.7&nbsp; / &nbsp;GLOBAL NODE</span><span class="live"><i></i> SYSTEM ONLINE</span></div>
 </header>
 <div class="layout">
@@ -291,10 +372,10 @@ body.home-command footer{border-top-color:rgba(127,231,255,.32)!important}
 <div class="breadcrumb">EW / <b>COMMAND CENTER</b> / OVERVIEW</div>
 <section class="hero-grid">
 <div class="hero-copy">
-<div class="kicker"><i></i> KNOWLEDGE. TOOLS. POSSIBILITIES.</div>
-<h1>Explore beyond<br>the <span>obvious.</span></h1>
-<p>A high-signal launchpad for curious minds. Find a useful tool, learn a difficult concept, explore emerging technology, or follow an idea somewhere new.</p>
-<div class="actions"><a class="action-primary" href="#explore">Explore the systems <span>↗</span></a><a class="action-secondary" href="dashboard.html">Open command dashboard <span>⌘</span></a></div>
+<div class="kicker"><i></i> THINK CLEAR. BUILD BOLD. MOVE FAST.</div>
+<h1>THE WORLD.<br><span>YOUR NEXT MOVE.</span></h1>
+<p>One workspace to learn faster, build useful things, explore what is next, and turn curiosity into action.</p>
+<div class="actions"><a class="action-primary" href="#explore">Enter the universe <span>↗</span></a><a class="action-secondary" href="dashboard.html">Open command dashboard <span>⌘</span></a></div>
 <form class="searchbox" id="searchForm" role="search"><input id="searchInput" type="search" placeholder="Search the wider world…" aria-label="Search the web" required><select id="searchEngine" aria-label="Choose search source"><option value="web">Whole web</option><option value="news">Latest news</option><option value="wiki">Wikipedia</option><option value="video">Videos</option></select><button type="submit">Search ↗</button></form><div id="searchStatus" aria-live="polite"></div>
 </div>
 <div class="hero-visual" aria-label="Abstract animated energy core visualization">
@@ -309,7 +390,7 @@ body.home-command footer{border-top-color:rgba(127,231,255,.32)!important}
 <div class="metric"><small>MISSION</small><strong>Keep learning</strong><em>One step at a time</em></div>
 </section>
 <section id="explore">
-<div class="section-head"><div><small>01 / SYSTEMS DIRECTORY</small><h2>Choose your next direction.</h2><p>Purpose-built starting points. Pick a module and get moving.</p></div><small>SELECT A MODULE ↘</small></div>
+<div class="section-head"><div><small>01 / SYSTEMS DIRECTORY</small><h2>What do you want to make happen?</h2><p>Six starting points. One click to get moving.</p></div><small>SELECT A MODULE ↘</small></div>
 <div class="tool-grid">
 <a class="module" href="tools.html"><div class="mod-top"><span class="mod-icon">⌁</span><span class="mod-tag">UTILITY LAB</span></div><h3>Free Tools</h3><p>Word counter, percentage calculator, study planner and practical browser utilities.</p><span class="arrow">↗</span></a>
 <a class="module" href="education.html"><div class="mod-top"><span class="mod-icon">⌬</span><span class="mod-tag">LEARNING MATRIX</span></div><h3>Education</h3><p>Break big subjects into clearer ideas, study guides and next steps.</p><span class="arrow">↗</span></a>
@@ -319,7 +400,7 @@ body.home-command footer{border-top-color:rgba(127,231,255,.32)!important}
 <a class="module" href="education.html"><div class="mod-top"><span class="mod-icon">↗</span><span class="mod-tag">SKILL FORGE</span></div><h3>Skills & Ideas</h3><p>Build useful skills, explore business thinking and keep expanding your range.</p><span class="arrow">↗</span></a>
 </div>
 </section>
-<section class="bottom-band"><div><small>02 / THE PRIME DIRECTIVE</small><h2>Make knowledge easier to act on.</h2><p>This is an evolving independent project. New tools and guides are added in stages.</p></div><a class="action-primary" href="dashboard.html">Enter mission control ↗</a></section>
+<section class="bottom-band"><div><small>02 / THE PRIME DIRECTIVE</small><h2>Ideas are cheap. Action changes everything.</h2><p>A growing independent platform for learning, tools, technology and personal progress.</p></div><a class="action-primary" href="dashboard.html">Enter mission control ↗</a></section>
 <footer><span>© <span id="year"></span> EVERYTHING WORLD</span><span>BUILT FOR THE CURIOUS&nbsp; / &nbsp;EARLY ACCESS</span><a href="tools.html">Utility lab ↗</a></footer>
 </main>
 </div>
