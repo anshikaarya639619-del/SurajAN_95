@@ -1,6 +1,9 @@
 name: EVERYTHING WORLD — Site Health Check
 
 on:
+  push:
+    paths:
+      - '.github/workflows/site-health.yml'
   workflow_dispatch:
   schedule:
     # Daily check at 04:15 UTC. GitHub may delay scheduled runs.
