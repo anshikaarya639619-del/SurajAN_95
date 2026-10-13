@@ -667,3 +667,41 @@ body p,body li,body label,body small,body .sub,body .lead,body .note,body .dim{c
 body input,body textarea,body select{background:#03101a!important;color:#e9fbff!important;border-color:rgba(69,231,255,.35)!important}
 body .hero h1 span{color:#65eaff!important;background:none!important;-webkit-text-fill-color:#65eaff!important}
 body .brandicon{background:linear-gradient(145deg,#a5faff,#22c5ec)!important;color:#001018!important}
+
+
+/* EVERYTHING WORLD — OBISIDIAN RED RELEASE: explicit high-priority global theme */
+:root{
+ --ink:#f5f3f2!important;--text:#f5f3f2!important;--dim:#aaa3a2!important;
+ --muted:#aaa3a2!important;--accent:#ff303b!important;--red:#ff303b!important;
+ --lime:#ff303b!important;--cyan:#ff303b!important;--gold:#ff303b!important;
+ --edge:rgba(255,48,59,.25)!important;--line:rgba(255,48,59,.22)!important;
+ --panel:#111112!important;--card:#111112!important;--bg:#070708!important;
+}
+html{background:#070708!important;color-scheme:dark!important}
+body,body.home-command,body.dashboard,body.planner-page{
+ background:#070708!important;color:#f5f3f2!important;
+}
+body::before{background:radial-gradient(ellipse at 50% -20%,rgba(255,48,59,.13),transparent 55%)!important;opacity:1!important}
+body :is(header,nav,aside,.topbar,.navbar,.sidebar,.rail,.rail-head,.rail-foot,.nav-shell){
+ background:rgba(8,8,9,.96)!important;border-color:rgba(255,48,59,.2)!important;
+}
+body :is(.panel,.card,.tile,.metric,.metric-card,.stat-card,.step,.book,.section,.welcome,.hero-visual,.rail-foot,.action-secondary,.orbit-label,.tool-card,.feature,.planner-card,.content-card,.glass,.widget,.module,.surface){
+ background:linear-gradient(145deg,#151516,#0c0c0d)!important;
+ border:1px solid rgba(255,48,59,.23)!important;
+ color:#f5f3f2!important;box-shadow:0 12px 34px rgba(0,0,0,.28)!important;
+ border-radius:12px!important;
+}
+body :is(h1,h2,h3,h4,.hero-title,.brand,.logo,.page-title){color:#f7f4f3!important}
+body :is(.lime,.yellow,.gold,.amber,.orange,.highlight,.accent,.text-lime,.text-yellow,.status,.status-good,.hero h1 span,.eyebrow,.kicker){
+ color:#ff414b!important;-webkit-text-fill-color:#ff414b!important;
+}
+body :is(button,.btn,.button,.action-primary,.btn-primary,.primary,.submit,[type=submit]){
+ background:linear-gradient(110deg,#ff4a52,#c90f20)!important;color:#fff!important;
+ border:1px solid #ff626a!important;box-shadow:0 6px 22px rgba(255,48,59,.18)!important;
+}
+body :is(.action-secondary,.btn-secondary,.secondary){background:#151516!important;color:#f5f3f2!important;border:1px solid rgba(255,48,59,.35)!important}
+body a{color:#ff626a!important}
+body a:hover{color:#fff!important}
+body p,body li,body label,body small,body .sub,body .lead,body .note,body .dim{color:#b9b1b0!important}
+body input,body textarea,body select{background:#0a0a0b!important;color:#f5f3f2!important;border:1px solid rgba(255,48,59,.35)!important}
+body .brandicon{background:linear-gradient(145deg,#ff646b,#c90f20)!important;color:#fff!important}
