@@ -1,0 +1,31 @@
+name: Product Link Health Check
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check-product-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check planner and share-kit pages
+        run: |
+          set -euo pipefail
+          for url in \
+            "https://anshikaarya639619-del.github.io/SurajAN_95/" \
+            "https://anshikaarya639619-del.github.io/SurajAN_95/weekly-focus-planner.html" \
+            "https://anshikaarya639619-del.github.io/SurajAN_95/planner-share-kit.html"; do
+            echo "Checking $url"
+            code="$(curl -L -sS -o /tmp/page.html -w '%{http_code}' --max-time 30 "$url")"
+            echo "HTTP $code"
+            test "$code" = "200"
+            test -s /tmp/page.html
+          done
+      - name: Check required product content
+        run: |
+          set -euo pipefail
+          curl -fsSL --max-time 30 "https://anshikaarya639619-del.github.io/SurajAN_95/weekly-focus-planner.html" | grep -q "THE WEEKLY"
+          curl -fsSL --max-time 30 "https://anshikaarya639619-del.github.io/SurajAN_95/planner-share-kit.html" | grep -q "Instagram caption"
