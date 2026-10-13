@@ -11,7 +11,7 @@
 <meta property="og:description" content="One interface. Infinite directions. Explore tools, knowledge and technology.">
 <meta property="og:type" content="website">
 <title>EVERYTHING WORLD — Curiosity Engine</title>
-<link rel="stylesheet" href="stark-ui.css?v=20261013d">
+<link rel="stylesheet" href="stark-ui.css?v=20261013e">
 <style>
 :root{--ink:#eaf5ff;--dim:#91a7c0;--cyan:#61e8ff;--edge:rgba(116,207,255,.18);--glass:rgba(8,17,31,.78)}
 *{box-sizing:border-box}
@@ -90,6 +90,19 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;paddin
 @media(max-width:980px){.layout{grid-template-columns:1fr}.rail{display:none}.hero-grid{grid-template-columns:1fr  minmax(240px,.75fr)}.hero-visual{min-height:320px}.hero h1{font-size:clamp(46px,7vw,72px)}}
 @media(max-width:680px){.shell{width:calc(100% - 22px)}.topbar{height:65px}.topright .uptime{display:none}.layout{padding-top:8px}.breadcrumb{margin:19px 0}.hero-grid{grid-template-columns:1fr}.hero-copy{padding:20px 0 10px}.hero h1{font-size:clamp(45px,13vw,68px);margin:22px 0 16px}.hero-visual{min-height:290px}.core{width:220px}.metrics{gap:7px}.metric{padding:12px 10px}.metric strong{font-size:17px}.metric small{font-size:8px;letter-spacing:.07em}.tool-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.module{padding:14px;min-height:165px}.module h3{font-size:13px}.module p{font-size:10px}.section-head h2{font-size:20px}.searchbox{flex-wrap:wrap}.searchbox input{flex-basis:100%}.searchbox select{flex:1}.searchbox button{min-height:42px}.bottom-band{align-items:flex-start;flex-direction:column}.topright{font-size:8px}.brandmark{font-size:11px;letter-spacing:.1em}}
 @media(prefers-reduced-motion:reduce){.core{animation:none}}
+
+/* Always-visible SurajAN_95 signature watermark */
+.sa-signature{position:fixed!important;right:max(12px,env(safe-area-inset-right))!important;bottom:max(12px,env(safe-area-inset-bottom))!important;z-index:99999!important;display:inline-flex!important;align-items:center!important;gap:8px!important;max-width:calc(100vw - 24px)!important;padding:10px 14px!important;border:1px solid rgba(170,210,255,.55)!important;border-radius:999px!important;background:linear-gradient(135deg,rgba(5,12,24,.97),rgba(22,18,47,.96))!important;-webkit-backdrop-filter:blur(18px)!important;backdrop-filter:blur(18px)!important;text-decoration:none!important;box-shadow:0 0 0 1px #ffffff0b,0 7px 26px #0009,0 0 28px #57bfff35!important;isolation:isolate!important;overflow:hidden!important;animation:sa-watermark-glow 4s ease-in-out infinite!important}
+.sa-signature:before{content:"";position:absolute;inset:-1px;z-index:-1;border-radius:inherit;padding:1px;background:linear-gradient(115deg,#fff,#64e8ff,#9c83ff,#ff8bc7,#fff);background-size:260% 260%;animation:sa-watermark-spectrum 6s linear infinite;opacity:.95;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.sa-signature .sa-dot{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#69f6d0;box-shadow:0 0 8px #69f6d0,0 0 17px #69f6d0}
+.sa-signature .sa-name{display:inline-flex;align-items:center;white-space:nowrap;font:950 12px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.13em}
+.sa-signature .sa-char{font-weight:1000;-webkit-text-stroke:.25px #ffffff70;text-shadow:0 0 8px var(--sa-glow),0 0 16px color-mix(in srgb,var(--sa-glow) 60%,transparent);animation:sa-watermark-letter 2.8s ease-in-out infinite;animation-delay:var(--sa-delay);color:var(--sa-top)}
+@keyframes sa-watermark-spectrum{to{background-position:260% 50%}}
+@keyframes sa-watermark-letter{0%,100%{filter:brightness(1);transform:translateY(0)}50%{filter:brightness(1.35);transform:translateY(-1px)}}
+@keyframes sa-watermark-glow{0%,100%{box-shadow:0 0 0 1px #ffffff0b,0 7px 26px #0009,0 0 22px #57bfff2e}50%{box-shadow:0 0 0 1px #ffffff16,0 7px 28px #000a,0 0 34px #a383ff45}}
+@media(max-width:480px){.sa-signature{right:9px!important;bottom:max(9px,env(safe-area-inset-bottom))!important;padding:9px 11px!important}.sa-signature .sa-name{font-size:10px;letter-spacing:.1em}}
+@media(prefers-reduced-motion:reduce){.sa-signature,.sa-signature:before,.sa-signature .sa-char{animation:none!important}}
+
 </style>
 </head>
 <body class="home-command">
@@ -152,6 +165,6 @@ document.getElementById('year').textContent=new Date().getFullYear();
 const form=document.getElementById('searchForm'),input=document.getElementById('searchInput'),engine=document.getElementById('searchEngine'),status=document.getElementById('searchStatus');
 form.addEventListener('submit',e=>{e.preventDefault();const q=input.value.trim();if(!q)return;const routes={web:'https://duckduckgo.com/?q=',news:'https://www.google.com/search?tbm=nws&q=',wiki:'https://en.wikipedia.org/w/index.php?search=',video:'https://www.youtube.com/results?search_query='};window.open(routes[engine.value]+encodeURIComponent(q),'_blank','noopener');status.textContent='Opening results from '+engine.options[engine.selectedIndex].text+'. Search is provided by an external service.';});
 </script>
-<a class="sa-signature" href="./" aria-label="SurajAN_95 website signature"><span class="sa-dot" aria-hidden="true"></span><span class="sa-name">SurajAN_95</span></a>
+<a class="sa-signature" href="./" aria-label="SurajAN_95 website signature watermark"><span class="sa-dot" aria-hidden="true"></span><span class="sa-name" aria-label="SurajAN_95"><span class="sa-char" style="--sa-top:#ffffff;--sa-glow:#9fc6ff;--sa-delay:0s">S</span><span class="sa-char" style="--sa-top:#8cecff;--sa-glow:#57cfff;--sa-delay:.16s">u</span><span class="sa-char" style="--sa-top:#d7b8ff;--sa-glow:#a875ff;--sa-delay:.32s">r</span><span class="sa-char" style="--sa-top:#a4ffe7;--sa-glow:#6dffe0;--sa-delay:.48s">a</span><span class="sa-char" style="--sa-top:#ffe7a3;--sa-glow:#ffc76d;--sa-delay:.64s">j</span><span class="sa-char" style="--sa-top:#ffb7d9;--sa-glow:#ff81c4;--sa-delay:.80s">A</span><span class="sa-char" style="--sa-top:#c9f7ff;--sa-glow:#73d6ff;--sa-delay:.96s">N</span><span class="sa-char" style="--sa-top:#e3c9ff;--sa-glow:#bd8dff;--sa-delay:1.12s">_</span><span class="sa-char" style="--sa-top:#fff2a6;--sa-glow:#ffdc61;--sa-delay:1.28s">9</span><span class="sa-char" style="--sa-top:#b7ffd5;--sa-glow:#66f2ad;--sa-delay:1.44s">5</span></span></a>
 </body>
 </html>
