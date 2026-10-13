@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A practical beginner-friendly learning hub: set a goal, learn in small blocks, practice from memory, and review your progress.">
+<meta name="theme-color" content="#080b12">
+<title>Education & Learning | EVERYTHING WORLD</title>
+<style>
+:root{color-scheme:dark;--bg:#080b12;--panel:#111925;--line:#283142;--text:#f4f7fb;--muted:#aebbd0;--blue:#83aaff;--mint:#7ce8c4}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#1d3157,transparent 40%),var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{width:min(900px,calc(100% - 32px));margin:auto}.nav{padding:20px 0;border-bottom:1px solid #ffffff17;display:flex;justify-content:space-between;gap:16px;align-items:center}.brand{font-weight:900;font-size:14px;letter-spacing:.1em}.brand span{color:var(--mint)}a{color:var(--blue);text-decoration:none}.hero{padding:58px 0 34px}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mint)}h1{font-size:clamp(38px,7vw,64px);line-height:1.04;letter-spacing:-.055em;margin:15px 0}h2{font-size:25px;letter-spacing:-.035em;margin:0 0 10px}h3{margin:0 0 5px;font-size:17px}.lead{font-size:19px;color:var(--muted);max-width:700px}.panel{background:linear-gradient(145deg,#131d2c,#0e141e);border:1px solid var(--line);border-radius:18px;padding:22px;margin:16px 0}.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.step{border:1px solid #ffffff16;background:#0d131d;border-radius:14px;padding:17px}.num{color:var(--mint);font-weight:800;font-size:12px;letter-spacing:.1em}.step p,.panel p,.panel li{color:var(--muted)}.step p{margin:6px 0 0;font-size:14px}.panel ul{padding-left:21px}.panel li{margin:7px 0}.checklist{display:grid;gap:11px}.check{display:flex;gap:10px;align-items:flex-start;color:var(--muted)}input[type=checkbox]{margin-top:6px;accent-color:#7ce8c4;width:17px;height:17px}.progress{height:7px;border-radius:99px;background:#293449;overflow:hidden;margin:13px 0}.bar{height:100%;width:0;background:var(--mint);transition:width .2s}.count{color:var(--mint);font-size:13px}.btn{display:inline-block;border:0;border-radius:11px;background:#eaf0ff;color:#101522;padding:12px 16px;font-weight:800;cursor:pointer}.footer{padding:24px 0 36px;border-top:1px solid #ffffff17;color:#8290a5;font-size:12px;margin-top:35px}@media(max-width:600px){.steps{grid-template-columns:1fr}.panel{padding:18px}.hero{padding-top:43px}}
+</style>
+</head>
+<body><header class="wrap nav"><a class="brand" href="index.html">EVERYTHING <span>WORLD</span></a><a href="index.html">← All topics</a></header>
+<main class="wrap">
+<section class="hero"><div class="eyebrow">LEARN · PRACTICE · GROW</div><h1>Learn anything.<br><span style="color:var(--blue)">One step at a time.</span></h1><p class="lead">You do not need to master everything in one day. Choose one clear goal, study a small piece, recall it without looking, and repeat tomorrow.</p></section>
+<section class="panel"><h2>A simple 30-minute learning session</h2><div class="steps">
+<div class="step"><div class="num">01 · 5 MIN</div><h3>Set one goal</h3><p>Write one question you want to answer by the end of the session.</p></div>
+<div class="step"><div class="num">02 · 10 MIN</div><h3>Learn a small part</h3><p>Read or watch one trustworthy explanation. Keep notes short and clear.</p></div>
+<div class="step"><div class="num">03 · 10 MIN</div><h3>Recall from memory</h3><p>Close the material. Explain the idea in your own words or solve a question.</p></div>
+<div class="step"><div class="num">04 · 5 MIN</div><h3>Review and plan</h3><p>Check mistakes, write one takeaway, and choose what to practise next.</p></div>
+</div></section>
+<section class="panel"><h2>Build a strong foundation</h2><p>Use this sequence when a subject feels difficult. Move forward when you can explain the current step in your own words.</p><ul><li><strong>Understand the basics:</strong> learn the essential words, symbols, and ideas first.</li><li><strong>See a worked example:</strong> follow each step and ask why it works.</li><li><strong>Try it yourself:</strong> begin with an easy problem before increasing difficulty.</li><li><strong>Keep an error log:</strong> note what went wrong and the corrected method.</li><li><strong>Revisit later:</strong> test yourself again tomorrow and next week.</li></ul></section>
+<section class="panel"><h2>Your session checklist</h2><p>Tick each action as you complete it. This checklist stays on this page only; it does not save to an account.</p><div class="checklist" id="checklist">
+<label class="check"><input type="checkbox"><span>I chose one specific learning goal.</span></label>
+<label class="check"><input type="checkbox"><span>I studied one small, understandable section.</span></label>
+<label class="check"><input type="checkbox"><span>I recalled or practised without looking.</span></label>
+<label class="check"><input type="checkbox"><span>I recorded a mistake or key takeaway.</span></label>
+<label class="check"><input type="checkbox"><span>I picked the next small step.</span></label>
+</div><div class="progress"><div class="bar" id="bar"></div></div><div class="count" id="count" aria-live="polite">0 of 5 complete</div></section>
+<section class="panel"><h2>Choose your next learning goal</h2><p>Start with a real question, not a giant syllabus. For example: “I want to understand fractions,” “I want to write a clear English introduction,” or “I want to learn how the internet works.”</p><a class="btn" href="index.html#explore">Explore all topic areas ↗</a></section>
+</main><footer class="wrap footer">© EVERYTHING WORLD · Learning guide MVP · Review information and use trusted sources for important decisions.</footer>
+<script>const checks=[...document.querySelectorAll('#checklist input')],bar=document.getElementById('bar'),count=document.getElementById('count');function update(){const n=checks.filter(c=>c.checked).length;bar.style.width=(n/checks.length*100)+'%';count.textContent=n+' of '+checks.length+' complete'+(n===checks.length?' — session checklist done!':'')}checks.forEach(c=>c.addEventListener('change',update));</script>
+</body></html>
