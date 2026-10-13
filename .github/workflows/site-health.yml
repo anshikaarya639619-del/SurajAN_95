@@ -1,0 +1,54 @@
+name: EVERYTHING WORLD — Site Health Check
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Daily check at 04:15 UTC. GitHub may delay scheduled runs.
+    - cron: "15 4 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-health-check
+  cancel-in-progress: true
+
+jobs:
+  check-live-site:
+    name: Check public website pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check main pages and shared stylesheet
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://anshikaarya639619-del.github.io/SurajAN_95"
+          paths=(
+            "/"
+            "/dashboard.html"
+            "/education.html"
+            "/technology.html"
+            "/tools.html"
+            "/404.html"
+            "/stark-ui.css"
+          )
+
+          failures=0
+          for path in "${paths[@]}"; do
+            url="${base}${path}"
+            code="$(curl --location --silent --show-error --output /tmp/site-check-body --write-out '%{http_code}' --max-time 20 --retry 2 --retry-delay 2 "${url}" || true)"
+            if [[ "${code}" != "200" ]]; then
+              echo "::error title=Site health check failed::${url} returned HTTP ${code:-no response}"
+              failures=$((failures + 1))
+            else
+              echo "PASS HTTP ${code} ${url}"
+            fi
+          done
+
+          if [[ "${failures}" -gt 0 ]]; then
+            echo "::error::${failures} URL check(s) failed."
+            exit 1
+          fi
+
+          echo "All configured public website URLs returned HTTP 200."
