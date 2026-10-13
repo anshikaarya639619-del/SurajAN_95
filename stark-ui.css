@@ -447,3 +447,48 @@ input:focus,textarea:focus,select:focus,.select:focus{outline:1px solid #ff9b45!
 .sa-signature{border-color:#ff9b4580!important;background:linear-gradient(135deg,#090b0df2,#1d1711ed)!important;box-shadow:0 0 28px #ff8c3a1c!important}
 @media(max-width:640px){body:after{right:6px!important;bottom:6px!important;font-size:7px!important}.navlinks{gap:8px 12px!important}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* PHASE V — SILENT ARC REACTOR / global interface reset */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800;900&display=swap');
+:root{--st-bg:#070809;--st-surface:#111315;--st-surface-2:#171a1c;--st-line:rgba(238,185,111,.22);--st-line-hot:rgba(255,191,112,.72);--st-text:#f6f2ea;--st-muted:#a7a39b;--st-cyan:#f1b86e;--st-blue:#f4e3c5;--st-amber:#ffe0a6;--st-violet:#c5cbd0}
+*{scrollbar-color:#725638 #090a0b;scrollbar-width:thin}
+html{background:#070809!important}
+body{background:radial-gradient(ellipse at 50% -22%,#3c2b19 0%,transparent 44%),radial-gradient(ellipse at 100% 85%,#20201d 0%,transparent 38%),#070809!important;color:#f6f2ea!important;font-family:Inter,system-ui,sans-serif!important}
+body:before{background-image:linear-gradient(rgba(255,198,126,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(255,198,126,.07) 1px,transparent 1px)!important;background-size:38px 38px!important;opacity:.14!important}
+body:after{content:"S.A.  /  SILENT ARC  /  SYSTEMS INTERFACE"!important;font:500 8px/1.4 'IBM Plex Mono',monospace!important;color:#e9bd81!important;letter-spacing:.2em!important;border:1px solid #e9bd8138!important;background:#090a0bf2!important;border-radius:0!important;box-shadow:0 0 24px #e9bd8109!important}
+h1,h2,h3,h4,.brand,.brandmark,.section-head h2,.hero h1{font-family:'Barlow Condensed',Impact,sans-serif!important;letter-spacing:-.025em!important;text-transform:uppercase!important}
+h1,.hero h1{font-weight:800!important;line-height:.96!important;text-shadow:0 0 35px #f1b86e13!important}
+.hero h1 em,.hero h1 span{color:#f4d7a8!important}
+a{transition:color .18s ease,border-color .18s ease,background .18s ease,transform .18s ease!important}
+a:hover{color:#ffd59a!important}
+.nav,.topbar{border-color:#e9bd8130!important}
+.nav:after{background:linear-gradient(90deg,#e9bd81,transparent)!important;box-shadow:0 0 15px #e9bd8140!important}
+.brand,.brandmark{letter-spacing:.11em!important}
+.brandicon{background:linear-gradient(145deg,#fff0d0,#e9a958 65%,#8d4e26)!important;color:#15100a!important;border-radius:2px!important;box-shadow:0 0 26px #e9bd811e!important}
+.panel,.card,.tile,.feature,.step,.stat,.result,.notice,.faq,.task,.path,.profile,.welcome,.module,.metric,.rail-foot,.hero-visual,.orbit-label{
+ background:linear-gradient(145deg,rgba(24,25,25,.97),rgba(10,11,11,.98))!important;border:1px solid #e9bd8128!important;border-radius:2px!important;box-shadow:inset 0 1px #ffffff08,0 18px 42px #0006!important
+}
+.panel:before,.card:before,.tile:before,.feature:before,.step:before,.stat:before,.result:before,.notice:before,.path:before{background:linear-gradient(90deg,#e9bd81,transparent)!important}
+.panel:hover,.card:hover,.tile:hover,.feature:hover,.step:hover,.stat:hover,.path:hover,.module:hover{border-color:#e9bd8170!important;box-shadow:0 20px 48px #0008,0 0 22px #e9bd810b!important;transform:translateY(-3px)!important}
+.btn,button,.button,input[type=submit],a.button,.action-primary,.action-secondary{font-family:'IBM Plex Mono',monospace!important;text-transform:uppercase!important;letter-spacing:.08em!important;border-radius:2px!important}
+.btn,button,.button,input[type=submit],a.button,.action-primary{background:linear-gradient(110deg,#ffe6bd,#e9a958 65%,#bd713d)!important;color:#191108!important;border:1px solid #ffdda8!important;box-shadow:0 0 24px #e9a95815,inset 0 1px #fff8!important}
+.btn.secondary,.secondary,.action-secondary{background:#0c0d0d!important;color:#f0d4ad!important;border:1px solid #e9bd814a!important}
+.btn:hover,button:hover,.button:hover,a.button:hover,.action-primary:hover,.action-secondary:hover{filter:brightness(1.1)!important;box-shadow:0 0 25px #e9bd8120!important}
+input,textarea,select,.select{background:#090b0c!important;color:#f6f2ea!important;border-color:#e9bd8138!important;border-radius:2px!important}
+input:focus,textarea:focus,select:focus,.select:focus{outline:1px solid #e9bd81!important;outline-offset:3px}
+.tag,.pill,.chip,.num,.status,.micro{background:#e9bd810b!important;color:#f3d4a5!important;border-color:#e9bd8140!important;border-radius:2px!important;font-family:'IBM Plex Mono',monospace!important}
+.rail-link{border-radius:2px!important;font-family:'IBM Plex Mono',monospace!important}
+.rail-link.active,.rail-link:hover{background:linear-gradient(90deg,#e9bd8117,transparent)!important;border-color:#e9bd8130!important;box-shadow:inset 2px 0 #e9bd81!important;color:#fff0d9!important}
+.hero-visual{background:radial-gradient(ellipse at 50% 45%,#65421d38,transparent 48%),linear-gradient(150deg,#1a1916,#080909 75%)!important}
+.core{filter:sepia(1) saturate(1.8) hue-rotate(345deg) drop-shadow(0 0 28px #e9bd8138)!important}
+.orbit-label{color:#f2d0a0!important}
+.metric:before{background:linear-gradient(90deg,transparent,#e9bd81,transparent)!important}
+.metric em,.module .arrow,.breadcrumb b,.eyebrow,.kicker,.mod-tag,.section-head small{color:#e9bd81!important}
+.hero:after{border-color:#e9bd812b!important;background:radial-gradient(circle,#e9bd8118 0 2%,transparent 3% 24%,#e9bd8112 25% 26%,transparent 27% 48%,#e9bd8125 49% 50%,transparent 51%),conic-gradient(from 10deg,transparent 0 12%,#e9bd8165 13%,transparent 14% 42%,#f4e3c5 43%,transparent 44% 75%,#e9bd8155 76%,transparent 77%)!important}
+.hero:before{background:#fff0d8!important;box-shadow:0 0 9px #e9bd81,0 0 30px #d8874a!important}
+::selection{background:#e9bd8155!important;color:#fff!important}
+:focus-visible{outline:2px solid #f4d7a8!important}
+.stark-sound-toggle,.sound-toggle,.sound-control,[data-sound-toggle],.stark-hud-flash{display:none!important;visibility:hidden!important;pointer-events:none!important}
+@media(max-width:640px){body:after{font-size:7px!important;right:6px!important;bottom:6px!important}.navlinks{gap:8px 12px!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
