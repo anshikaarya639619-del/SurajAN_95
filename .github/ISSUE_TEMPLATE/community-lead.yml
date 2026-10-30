@@ -1,0 +1,67 @@
+name: Community / Business Connection
+description: Suggest a Gorakhpur story, list a business, or request a promotion discussion.
+title: "[COMMUNITY LEAD] "
+labels: [community-lead]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Privacy notice:** This submission becomes a PUBLIC GitHub issue visible to anyone. Do not enter phone numbers, personal email addresses, home addresses, passwords, payment details, or sensitive personal information. Submit only information you are comfortable sharing publicly. A GitHub account is required.
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: What brings you here?
+      options:
+        - I want my local business discovered
+        - I want to discuss a business promotion
+        - I want to suggest a talented person / creator
+        - I want to suggest a place / village / event
+        - I want to collaborate with GORAKHPUR 365
+        - I have a general community suggestion
+    validations:
+      required: true
+  - type: input
+    id: public_name
+    attributes:
+      label: Public name or business name
+      description: Use only a name you are comfortable displaying publicly.
+      placeholder: Business / creator / place name
+    validations:
+      required: true
+  - type: input
+    id: area
+    attributes:
+      label: Area / locality in or around Gorakhpur
+      placeholder: Locality or village
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Food / restaurant / cafe
+        - Shop / retail
+        - Service / professional
+        - Artist / creator / talent
+        - Sports / fitness
+        - Education
+        - Tourism / place / event
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Tell us what you want people to discover
+      description: Share public details only. Do not add private contact information.
+      placeholder: What makes this business, person, place, or idea worth discovering?
+    validations:
+      required: true
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Consent
+      options:
+        - label: I understand this submission will be publicly visible on GitHub, and I agree to share these details publicly.
+          required: true
