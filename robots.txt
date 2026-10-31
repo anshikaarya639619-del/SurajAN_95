@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anshikaarya639619-del.github.io/SurajAN_95/sitemap.xml
