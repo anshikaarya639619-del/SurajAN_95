@@ -61,7 +61,7 @@ body:
   - type: checkboxes
     id: consent
     attributes:
-      label: Consent
+      label: सहमति
       options:
         - label: मैं समझता/समझती हूँ कि यह सुझाव GitHub पर सार्वजनिक रूप से दिखाई देगा और मैं इन जानकारियों को सार्वजनिक रूप से साझा करने की सहमति देता/देती हूँ।
           required: true
