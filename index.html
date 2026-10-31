@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#10251d">
-<title>GORAKHPUR 365 — The City. The People. The Stories.</title>
+<title>GORAKHPUR 365 — गोरखपुर के लोग, मोहल्ले और कहानियाँ</title>
 <meta name="description" content="GORAKHPUR 365 — Gorakhpur, Uttar Pradesh के मोहल्लों, गाँवों, लोगों, local talent, businesses, culture और असली कहानियों की खोज।">
 <meta name="keywords" content="Gorakhpur, Gorakhpur 365, Gorakhpur Uttar Pradesh, Gorakhpur talent, Gorakhpur people, Gorakhpur villages, Gorakhpur stories, Gorakhpur Instagram, Gorakhpur YouTube">
-<meta property="og:type" content="website"><meta property="og:title" content="GORAKHPUR 365 | Discover Every Corner"><meta property="og:description" content="गोरखपुर के हर कोने की पहचान। हर टैलेंट की कहानी।"><meta property="og:url" content="https://anshikaarya639619-del.github.io/SurajAN_95/"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website"><meta property="og:locale" content="hi_IN"><meta property="og:site_name" content="GORAKHPUR 365"><meta property="og:title" content="GORAKHPUR 365 — गोरखपुर के लोग, मोहल्ले और कहानियाँ"><meta property="og:description" content="गोरखपुर के मोहल्लों, गाँवों, हुनरमंद लोगों और असली कहानियों की खोज।"><meta property="og:url" content="https://anshikaarya639619-del.github.io/SurajAN_95/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="GORAKHPUR 365 — गोरखपुर के लोग, मोहल्ले और कहानियाँ"><meta name="twitter:description" content="गोरखपुर के मोहल्लों, गाँवों, हुनरमंद लोगों और असली कहानियों की खोज।"><link rel="canonical" href="https://anshikaarya639619-del.github.io/SurajAN_95/">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -29,12 +29,28 @@ body{background:radial-gradient(ellipse at 90% 0%,#d8e4d3 0,transparent 38%),var
 .footer{border-color:#d9d0bd;color:#59685d;font-size:12px}.footer b{color:#1e6549}.watermark{border-color:#1e6549;background:#10251df2;color:#fff}.watermark span{color:#f0bd70}
 @media(max-width:760px){.hero h1{font-size:clamp(48px,13vw,78px)}.lead{font-size:16px}.navcta{font-size:10px}}
 
+
+/* Mobile navigation and keyboard accessibility */
+.skip-link{position:fixed;top:-64px;left:14px;z-index:1000;padding:10px 15px;border-radius:10px;background:#1e6549;color:#fff;font:700 14px 'Hind','Noto Sans Devanagari',sans-serif;box-shadow:0 6px 20px #172b2230;transition:top .18s ease}
+.skip-link:focus{top:12px}
+:focus-visible{outline:3px solid #d18a35;outline-offset:3px}
+.menu-toggle{display:none;align-items:center;justify-content:center;gap:7px;padding:9px 11px;border:1px solid #9eae9e;border-radius:10px;background:#fffdf7;color:#1e6549;font:700 12px 'Hind','Noto Sans Devanagari',sans-serif;cursor:pointer}
+@media(max-width:760px){
+ .nav{position:relative;z-index:30}
+ .menu-toggle{display:inline-flex}
+ .navlinks{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:3px;padding:8px;border:1px solid #d9d0bd;border-radius:14px;background:#fffdf7;box-shadow:0 14px 35px #172b2220}
+ .navlinks.is-open{display:flex}
+ .navlinks a{padding:12px 14px;border-radius:9px;color:#1e6549;font:600 14px 'Hind','Noto Sans Devanagari',sans-serif}
+ .navlinks a:hover,.navlinks a:focus-visible{background:#e9eee3;color:#172b22}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GORAKHPUR 365","url":"https://anshikaarya639619-del.github.io/SurajAN_95/","sameAs":["https://www.instagram.com/realgorakhpur365/","https://youtube.com/@gorakhpur365"],"areaServed":{"@type":"City","name":"Gorakhpur"}}</script>
 </head>
 <body>
-<header class="wrap nav"><a class="brand" href="#top"><span class="brandmark">G365</span><span>GORAKHPUR 365<small>THE CITY · THE PEOPLE · THE STORIES</small></span></a><nav class="navlinks"><a href="#mission">मकसद</a><a href="#trust">भरोसा</a><a href="#discover">चैनल</a><a href="#areas">DISCOVER</a><a href="#submit">कम्युनिटी केंद्र</a></nav><a class="navcta" href="#discover">सफर से जुड़ें ↗</a></header>
-<main id="top">
+<a class="skip-link" href="#top">मुख्य सामग्री पर जाएँ</a>
+<header class="wrap nav"><a class="brand" href="#top"><span class="brandmark">G365</span><span>GORAKHPUR 365<small>THE CITY · THE PEOPLE · THE STORIES</small></span></a><nav class="navlinks" id="primaryNav" aria-label="मुख्य नेविगेशन"><a href="#mission">मकसद</a><a href="#trust">भरोसा</a><a href="#discover">चैनल</a><a href="#areas">इलाके</a><a href="#submit">कम्युनिटी केंद्र</a></nav><button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="मेन्यू खोलें"><span aria-hidden="true">☰</span><span>मेन्यू</span></button><a class="navcta" href="#discover">सफर से जुड़ें ↗</a></header>
+<main id="top" tabindex="-1">
 <section class="hero"><div class="wrap"><div class="eyebrow">गोरखपुर · उत्तर प्रदेश · भारत</div><h1>अपना शहर।<br><span>अपने लोग।</span><br>अपनी कहानियाँ।</h1><p class="lead">गोरखपुर के हर कोने की पहचान। हर मोहल्ले की कहानी। हर गाँव का हुनर। GORAKHPUR 365 — अपनी मिट्टी को दुनिया के सामने लाने का 365 दिनों का सफर।</p><div class="actions"><a class="btn" href="https://www.instagram.com/realgorakhpur365/" target="_blank" rel="noopener noreferrer">◎ इंस्टाग्राम पर जुड़ें ↗</a><a class="btn alt" href="https://youtube.com/@gorakhpur365" target="_blank" rel="noopener noreferrer">▶ यूट्यूब पर जुड़ें ↗</a></div><div class="metrics"><span><b>365</b> दिन</span><span><b>1</b> शहर</span><span><b>∞</b> कहानियाँ</span><span>शुरुआत: सूरज</span></div></div><div class="hero-tag">GKP</div></section>
 <section id="mission"><div class="wrap"><div class="heading"><div><div class="eyebrow">हमारा मकसद</div><h2>अपनी मिट्टी।<br>अपनी पहचान।</h2></div><p>यह सिर्फ एक चैनल नहीं, बल्कि गोरखपुर के लोगों, जगहों, हुनर, दुकानों, संस्कृति और सच्ची कहानियों को दुनिया तक पहुँचाने की एक पहल है।</p></div><div class="grid"><article class="card"><div class="index">01 / PEOPLE</div><h3>लोग और हुनर</h3><p>कलाकारों, खिलाड़ियों, विद्यार्थियों, रचनाकारों, उद्यमियों और छिपे हुए हुनर की सच्ची कहानियाँ।</p></article><article class="card"><div class="index">02 / PLACES</div><h3>मोहल्ले और गाँव</h3><p>शहर के मोहल्ले, गाँव, बाजार, पहचान वाली जगहें और रोज़मर्रा की ज़िंदगी।</p></article><article class="card"><div class="index">03 / CULTURE</div><h3>खाना और संस्कृति</h3><p>यहाँ का स्वाद, परंपराएँ, त्योहार, कला और गोरखपुर की असली पहचान।</p></article></div></div></section>
 <section id="trust"><div class="wrap"><div class="heading"><div><div class="eyebrow">हमारा भरोसा</div><h2>पहले विश्वास।<br>फिर पहचान।</h2></div><p>गोरखपुर की कहानियाँ जिम्मेदारी से साझा करने के लिए हमारे साफ़ नियम।</p></div><div class="grid"><article class="card"><div class="index">01 / FACT CHECK</div><h3>जानकारी की पुष्टि</h3><p>जगह, नाम और दावों को प्रकाशित करने से पहले उपलब्ध जानकारी से जाँचने की कोशिश करेंगे। गलती दिखे तो सुधार करेंगे।</p></article><article class="card"><div class="index">02 / PERMISSION</div><h3>सम्मान और अनुमति</h3><p>किसी व्यक्ति की पहचान या निजी कहानी साझा करने से पहले उचित सहमति और निजता का ध्यान रखेंगे।</p></article><article class="card"><div class="index">03 / TRANSPARENCY</div><h3>प्रचार साफ़-साफ़</h3><p>भविष्य में कोई paid promotion हुआ तो उसे साफ़ तौर पर प्रचार के रूप में बताएँगे। पैसे लेकर ईमानदार राय नहीं छिपाएँगे।</p></article><article class="card"><div class="index">04 / NO FAKE</div><h3>नकली लोकप्रियता नहीं</h3><p>फर्जी reviews, followers, views, testimonials या मनगढ़ंत आँकड़ों का इस्तेमाल नहीं करेंगे।</p></article><article class="card"><div class="index">05 / PRIVACY</div><h3>निजी जानकारी सुरक्षित</h3><p>सुझाव भेजते समय निजी फोन नंबर, घर का पता, पासवर्ड या भुगतान विवरण साझा न करें। सार्वजनिक फ़ॉर्म की चेतावनी पहले पढ़ें।</p></article><article class="card"><div class="index">06 / FAIR SELECTION</div><h3>फीचर की गारंटी नहीं</h3><p>हर सुझाव की समीक्षा होगी, लेकिन वेबसाइट या वीडियो में जगह मिलने की गारंटी नहीं है। चयन कहानी की उपयोगिता और पुष्टि पर होगा।</p></article></div></div></section>
@@ -45,6 +61,6 @@ body{background:radial-gradient(ellipse at 90% 0%,#d8e4d3 0,transparent 38%),var
 <footer class="wrap footer"><span><b>GORAKHPUR 365</b> · अपनी मिट्टी. अपनी पहचान. अपनी कहानियाँ.</span><span>निर्माता <b>THE_REAL_SURAJ_🇱🇷</b></span><span>© <span id="year"></span> SURAJ</span></footer>
 <div class="watermark">© <span>THE_REAL_SURAJ_🇱🇷</span></div>
 <script>
-(()=>{'use strict';document.getElementById('year').textContent=new Date().getFullYear();})();
+(()=>{'use strict';const year=document.getElementById('year');if(year)year.textContent=new Date().getFullYear();const toggle=document.getElementById('menuToggle');const nav=document.getElementById('primaryNav');if(toggle&&nav){const setMenuOpen=open=>{nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'मेन्यू बंद करें':'मेन्यू खोलें');};toggle.addEventListener('click',()=>setMenuOpen(toggle.getAttribute('aria-expanded')!=='true'));nav.addEventListener('click',event=>{if(event.target.closest('a'))setMenuOpen(false);});document.addEventListener('keydown',event=>{if(event.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){setMenuOpen(false);toggle.focus();}});}})();
 </script>
 </body></html>
