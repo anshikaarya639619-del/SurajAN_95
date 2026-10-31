@@ -1,61 +1,61 @@
-name: Community / Business Connection
-description: Suggest a Gorakhpur story, list a business, or request a promotion discussion.
+name: स्थानीय कहानी / कारोबार का सुझाव
+description: गोरखपुर की कहानी, स्थानीय कारोबार या सहयोग का सुझाव भेजें।
 title: "[COMMUNITY LEAD] "
 labels: [community-lead]
 body:
   - type: markdown
     attributes:
       value: |
-        **Privacy notice:** This submission becomes a PUBLIC GitHub issue visible to anyone. Do not enter phone numbers, personal email addresses, home addresses, passwords, payment details, or sensitive personal information. Submit only information you are comfortable sharing publicly. A GitHub account is required.
+        **गोपनीयता सूचना:** यह सुझाव GitHub पर एक PUBLIC issue के रूप में दिखाई देगा और कोई भी इसे देख सकता है। फोन नंबर, निजी ईमेल, घर का पता, पासवर्ड, भुगतान विवरण या संवेदनशील निजी जानकारी न लिखें। केवल वही जानकारी भेजें जिसे सार्वजनिक रूप से साझा करना सुरक्षित हो। GitHub खाते से साइन इन करना आवश्यक है।
   - type: dropdown
     id: request_type
     attributes:
-      label: What brings you here?
+      label: आप किसलिए सुझाव भेज रहे हैं?
       options:
-        - I want my local business discovered
-        - I want to discuss a business promotion
-        - I want to suggest a talented person / creator
-        - I want to suggest a place / village / event
-        - I want to collaborate with GORAKHPUR 365
-        - I have a general community suggestion
+        - मैं अपने स्थानीय कारोबार की पहचान बढ़ाना चाहता/चाहती हूँ
+        - मैं कारोबार के प्रचार पर बात करना चाहता/चाहती हूँ
+        - मैं किसी हुनरमंद व्यक्ति / क्रिएटर का सुझाव देना चाहता/चाहती हूँ
+        - मैं किसी जगह / गाँव / कार्यक्रम का सुझाव देना चाहता/चाहती हूँ
+        - मैं GORAKHPUR 365 के साथ काम करना चाहता/चाहती हूँ
+        - मेरे पास गोरखपुर से जुड़ा सामान्य सुझाव है
     validations:
       required: true
   - type: input
     id: public_name
     attributes:
-      label: Public name or business name
-      description: Use only a name you are comfortable displaying publicly.
-      placeholder: Business / creator / place name
+      label: सार्वजनिक नाम या कारोबार का नाम
+      description: केवल वही नाम लिखें जिसे सार्वजनिक रूप से दिखाने में आपको आपत्ति न हो।
+      placeholder: कारोबार / क्रिएटर / जगह का नाम
     validations:
       required: true
   - type: input
     id: area
     attributes:
-      label: Area / locality in or around Gorakhpur
-      placeholder: Locality or village
+      label: गोरखपुर का इलाका / मोहल्ला / गाँव
+      placeholder: मोहल्ले या गाँव का नाम
     validations:
       required: true
   - type: dropdown
     id: category
     attributes:
-      label: Category
+      label: श्रेणी
       options:
-        - Food / restaurant / cafe
-        - Shop / retail
-        - Service / professional
-        - Artist / creator / talent
-        - Sports / fitness
-        - Education
-        - Tourism / place / event
-        - Other
+        - खाना / रेस्टोरेंट / कैफ़े
+        - दुकान / रिटेल
+        - सेवा / पेशेवर काम
+        - कलाकार / क्रिएटर / हुनर
+        - खेल / फिटनेस
+        - शिक्षा
+        - घूमने की जगह / कार्यक्रम
+        - अन्य
     validations:
       required: true
   - type: textarea
     id: details
     attributes:
-      label: Tell us what you want people to discover
-      description: Share public details only. Do not add private contact information.
-      placeholder: What makes this business, person, place, or idea worth discovering?
+      label: आप लोगों को क्या दिखाना चाहते हैं?
+      description: केवल सार्वजनिक जानकारी दें। निजी संपर्क जानकारी न लिखें।
+      placeholder: यह कारोबार, व्यक्ति, जगह या विचार क्यों जानने योग्य है?
     validations:
       required: true
   - type: checkboxes
@@ -63,5 +63,5 @@ body:
     attributes:
       label: Consent
       options:
-        - label: I understand this submission will be publicly visible on GitHub, and I agree to share these details publicly.
+        - label: मैं समझता/समझती हूँ कि यह सुझाव GitHub पर सार्वजनिक रूप से दिखाई देगा और मैं इन जानकारियों को सार्वजनिक रूप से साझा करने की सहमति देता/देती हूँ।
           required: true
